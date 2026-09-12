@@ -1,16 +1,18 @@
 project: 
   type: website
+  output-dir: _site
+  
   
 website: 
   page-navigation: true
-  title: "Studiereis Dairyconsult" 
-  site-url: "https://albartcoster.github.io/studiereis_cordoba/" 
-  repo-url: https://github.com/albartcoster/studiereis_cordoba
+  title: "Studiereis Dairyconsult naar Italië" 
+  site-url: "https://albartcoster.github.io/studiereis_italie/" 
+  repo-url: https://github.com/albartcoster/studiereis_italie
   ## repo-actions: [edit] ## ,issue3
   
   page-footer:
     right: "Pagina gemaakt met plezier en met [Quarto](https://quarto.org/)."
-    left: "&copy; CC-By Albart Coster, 2023"
+    left: "&copy; CC-By Albart Coster, 2026"
     
   sidebar:
     logo: "images/DC.webp"
@@ -18,10 +20,10 @@ website:
     align: center
     tools: 
       - icon: globe
-        href: https://albartcoster.github.io/studiereis_cordoba
+        href: www.dairyconsult.nl
         text: "Dairyconsult.nl"
       - icon: github
-        href: https://github.com/albartcoster/studiereis_cordoba
+        href: https://github.com/albartcoster/studiereis_italie
         text: "Studiereis"
 
     style: "docked"
@@ -30,7 +32,7 @@ website:
     contents:
       - href: index.qmd
         text: Welkom/Bienvenida
-      - href: cordoba.qmd
+      - href: Italie.qmd
         text: Info over gebied
       - href: planning.qmd
         text: Planning van de reis

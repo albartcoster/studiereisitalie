@@ -4,55 +4,6 @@ title: "Planning en contactgegevens"
 
 # Planning {#planning}
 
-## 13-11
-| Tijd | Plaats |  |
-| --- | --- | --- |
-| 9:50 | Schiphol | Vertrek vlucht KL 1701 uit NL |
-| 11:45 | Berlin Schönefeld | Vertrek vlucht I23677 uit DE | 
-| 12:00 | Madrid Barajas | Aankomst vlucht KL 1701 |
-| 14:30 | Madrid Plaza de Atocha | Vertrek AVE Plaza de Atocha naar Córdoba | 
-| 15:00 | Madrid Barajas | Aankomst vlucht I23677 uit DE |
-| 16:30 | Córdoba | Aankomst mensen uit NL | 
-| 17:00 | Madrid Plaza de Atocha | Vetrek met AVE naar Córdoba | 
-| 19:00 | Córdoba | Aankomst mensen uit DE | 
-| 21:00 | Córdoba, Hotel Conquistador | Gezamenlijk diner |
-
-
-## 14-11
-| Tijd | Plaats |  |
-| --- | --- | --- |
-| 7:30 | Hotel Conquistador | Ontbijt |
-| 8:30 | Hotel Conquistador | Vertrek met bus naar COVAP|
-| 9:30 | COVAP | Aankomst |
-| 9:30 - 13:30 | Bezoek COVAP | 
-| 13:30 | COVAP| Lunch |
-| 15:00 | Granja Noriega | Vleesvee en varkensbedrijf|
-| 18:00 | Hotel Conquistador | Terugkeer |
-| 19:00 | Córdoba | Rondleiding door stad onder leiding van Berend Coster |
-| 20:00 + | Córdoba | Vrij programma |
-
-## 15-11
-| Tijd | Plaats |  |
-| --- | --- | --- |
-| 7:30 | Hotel Conquistador | Ontbijt | 
-| 9:00 | Hotel Conquistador | Vertrek met bus |
-| 10:00 | Ganadería Jesus López | [Melkveebedrijf](https://maps.app.goo.gl/XZL4FxoajgX6ZTjm7) |
-|11:30 | Hermanos Pizarro | [Melkveebedrijf](https://maps.app.goo.gl/6zpwsDxNax8G8XWo9) |
-|14:15 | Pozoblanco | Lunch |
-|16:00 | Torronteras | Melkveebedrijf |
-| 19:00 | Córdoba | Gezamenlijk diner in Córdoba | 
-
-## 16-11
-| Tijd | Plaats |  |
-| --- | --- | --- |
-| 7:00 + | Hotel Conquistador | Ontbijt |
-| 9:00| Treinstation Córdoba|  Vertrek mensen naar NL | 
-| 10:00|Treinstation Córdoba|  Vertrek mensen naar DE |
-| 13:30 | Madrid Barajas | Vertrek vlucht KL1702 naar NL |
-| 15:40 | Schiphol | Aankomst vlucht KL1702 naar NL |
-| 15:55 | Madrid Barajas | Vertrek vlucht vuelo I23672 naar Berlin Schönefeld | 
-| 19:00 | Berlin Schönefeld | Aankomst vlucht I23672 naar Berlin |
-
 
 # Contactgegevens {#cgegevens}
 
