@@ -1,0 +1,8 @@
+---
+title: "kaart"
+format: html
+---
+
+Hier vindt u de kaart van de reis:
+
+<iframe src="https://www.google.com/maps/d/u/1/embed?mid=1pEqdiu4BF5ksUj60htIwjiu26u3LGf0&ehbc=2E312F" width="100%" height="480"></iframe>

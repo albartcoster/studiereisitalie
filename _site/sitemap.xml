@@ -1,83 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://openscapes.github.io/quarto-website-tutorial/transition-from-rmarkdown.html</loc>
-    <lastmod>2023-11-05T13:46:10.131Z</lastmod>
-  </url>
-  <url>
-    <loc>https://openscapes.github.io/quarto-website-tutorial/index.html</loc>
-    <lastmod>2023-11-05T13:46:12.760Z</lastmod>
-  </url>
-  <url>
-    <loc>https://openscapes.github.io/quarto-website-tutorial/learning-more.html</loc>
-    <lastmod>2023-11-05T13:46:06.803Z</lastmod>
-  </url>
-  <url>
-    <loc>https://openscapes.github.io/quarto-website-tutorial/explore.html</loc>
-    <lastmod>2023-11-05T13:46:14.800Z</lastmod>
-  </url>
-  <url>
-    <loc>https://openscapes.github.io/quarto-website-tutorial/quarto-workflows/browser.html</loc>
-    <lastmod>2023-11-05T13:46:07.396Z</lastmod>
-  </url>
-  <url>
-    <loc>https://openscapes.github.io/quarto-website-tutorial/quarto-workflows/jupyter.html</loc>
-    <lastmod>2023-11-05T13:46:08.759Z</lastmod>
-  </url>
-  <url>
-    <loc>https://openscapes.github.io/quarto-website-tutorial/quarto-workflows/index.html</loc>
-    <lastmod>2023-11-05T13:46:07.996Z</lastmod>
-  </url>
-  <url>
-    <loc>https://openscapes.github.io/quarto-website-tutorial/quarto-workflows/rstudio.html</loc>
-    <lastmod>2023-11-05T13:46:09.429Z</lastmod>
-  </url>
-  <url>
-    <loc>https://albartcoster.github.io/studiereis_cordoba/index.html</loc>
-    <lastmod>2023-11-10T17:35:00.479Z</lastmod>
-  </url>
-  <url>
-    <loc>https://albartcoster.github.io/studiereis_cordoba/explore.html</loc>
-    <lastmod>2023-11-05T16:34:25.132Z</lastmod>
-  </url>
-  <url>
-    <loc>https://albartcoster.github.io/studiereis_cordoba/transition-from-rmarkdown.html</loc>
-    <lastmod>2023-11-05T16:35:48.133Z</lastmod>
-  </url>
-  <url>
-    <loc>https://albartcoster.github.io/studiereis_cordoba/planning.html</loc>
-    <lastmod>2023-11-11T21:43:20.541Z</lastmod>
-  </url>
-  <url>
-    <loc>https://albartcoster.github.io/studiereis_cordoba/cordoba.html</loc>
-    <lastmod>2023-11-11T21:43:18.261Z</lastmod>
-  </url>
-  <url>
-    <loc>https://albartcoster.github.io/studiereis_cordoba/deelnemers/deelnemers.html</loc>
-    <lastmod>2023-11-11T21:45:01.426Z</lastmod>
-  </url>
-  <url>
-    <loc>https://albartcoster.github.io/studiereis_cordoba/planning_ES.html</loc>
-    <lastmod>2023-11-11T21:44:59.900Z</lastmod>
-  </url>
-  <url>
-    <loc>https://albartcoster.github.io/studiereis_italie/index.html</loc>
-    <lastmod>2026-09-12T18:36:55.485Z</lastmod>
-  </url>
-  <url>
     <loc>https://albartcoster.github.io/studiereis_italie/planning_ES.html</loc>
-    <lastmod>2026-07-12T19:59:44.000Z</lastmod>
+    <lastmod>2026-09-12T19:03:47.221Z</lastmod>
+  </url>
+  <url>
+    <loc>https://albartcoster.github.io/studiereis_italie/kaart.html</loc>
+    <lastmod>2026-09-12T19:54:55.374Z</lastmod>
   </url>
   <url>
     <loc>https://albartcoster.github.io/studiereis_italie/gebied.html</loc>
-    <lastmod>2026-07-12T20:05:11.000Z</lastmod>
+    <lastmod>2026-09-12T19:03:47.093Z</lastmod>
   </url>
   <url>
     <loc>https://albartcoster.github.io/studiereis_italie/deelnemers/deelnemers.html</loc>
-    <lastmod>2026-07-12T19:59:44.000Z</lastmod>
+    <lastmod>2026-09-12T19:03:47.091Z</lastmod>
+  </url>
+  <url>
+    <loc>https://albartcoster.github.io/studiereis_italie/index.html</loc>
+    <lastmod>2026-09-12T19:03:47.219Z</lastmod>
   </url>
   <url>
     <loc>https://albartcoster.github.io/studiereis_italie/planning.html</loc>
-    <lastmod>2026-07-12T20:06:09.000Z</lastmod>
+    <lastmod>2026-09-12T19:29:34.627Z</lastmod>
   </url>
 </urlset>

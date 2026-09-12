@@ -20,10 +20,10 @@ website:
     align: center
     tools: 
       - icon: globe
-        href: www.dairyconsult.nl
+        href: https://www.dairyconsult.nl
         text: "Dairyconsult.nl"
       - icon: github
-        href: https://github.com/albartcoster/studiereis_italie
+        href: https://github.com/albartcoster/studiereisitalie
         text: "Studiereis"
 
     style: "docked"
@@ -32,30 +32,16 @@ website:
     contents:
       - href: index.qmd
         text: Welkom/Bienvenida
-      - href: Italie.qmd
-        text: Info over gebied
       - href: planning.qmd
         text: Planning van de reis
-      - href: planning_ES.qmd
-        text: Plánning del viaje
-      - href: deelnemers/deelnemers.qmd
-        text: Deelnemerslijst/ Participantes
-      
-      #- section: quarto-workflows/index.qmd
-      #  contents: 
-      #    - quarto-workflows/browser.md
-      #    - quarto-workflows/rstudio.qmd
-      #    - quarto-workflows/jupyter.md 
-      #- learning-more.qmd
-      #- href: transition-from-rmarkdown.qmd
-      #  text: Planning van de reis
-
+      - href: kaart.qmd
+        text: Kaart van reis
 
 format:
   html:
     theme:
       light: [cosmo, theme.scss] # from https://github.com/sta210-s22/website/blob/main/_quarto.yml
-      dark: [cosmo, theme-dark.scss]
+      ## dark: [cosmo, theme-dark.scss]
     code-copy: true
     code-overflow: wrap
     toc: true

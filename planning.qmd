@@ -4,6 +4,27 @@ title: "Planning en contactgegevens"
 
 # Planning {#planning}
 
+| Datum | Tijd | Actie | 
+| -- | -- | -- |
+| **27-10** | Hele dag | Aankomst in Hotel Milaan | 
+|  | 19:00 | Diner in hotel | 
+|**28-10** | 7:00 | Ontbijt in hotel |
+| | 8:00 | Vertrek met bus | 
+| | 9:00 | Aankomst bedrijf 1 | 
+| | 11:30 | Aankomst bedrijf 2 | 
+| | 13:30 | Lunch | 
+| | 15:30 | Aankomst bedrijf 3 |
+| | 18:00 | Aankomst in hotel Mantua | 
+| | 19:00 | Diner in Mantua | 
+|**29-10** | 7:30 | Ontbijt in Mantua | 
+|  | 9:00 | Vertrek naar bedrijf Rain360 | 
+|  | 12:00 | Lunch | 
+|  | 14:00 | Bezoek bedrijf Semex | 
+|  | 17:00 | Vertrek richting Milaan | 
+|  | 20:00 | Diner in Milaan |
+| **30-10** | 7:00 | Ontbijt | 
+| | Ieder op zijn tijd | Vlucht naar huis |
+
 
 # Contactgegevens {#cgegevens}
 
@@ -11,6 +32,7 @@ title: "Planning en contactgegevens"
 |--|---|---|
 |Iu Salvador|<iu@dairyconsult.nl> | +34 670319309 | 
 |Jaap van Zwieten | <jaap@dairyconsult.nl> | +31 626426483 |
-|Albart Coster | <albart@dairyconsult.nl> | +31.642402923 | 
-|Hotel Conquistador| [www.eurostarshotels.nl/eurostars-conquistador.html](https://www.eurostarshotels.nl/eurostars-conquistador.html) | +34 957481102 | 
-|Autocares Alcántara | [www.autocaresalcantara.com](https://www.autocaresalcantara.com) | +34 957 429 130 |
+|Albart Coster | <albart@dairyconsult.nl> | +31.642402923 |
+|Meint Hofstee | <meint@dairyconsult.nl> | +31.610052995 | 
+|Henk-Jan Hetterschijt| <hetterschijt@proagrartec.de> | +49.15162519159 | 
+
