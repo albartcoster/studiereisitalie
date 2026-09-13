@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://albartcoster.github.io/studiereis_italie/planning_ES.html</loc>
-    <lastmod>2026-09-12T19:03:47.221Z</lastmod>
-  </url>
-  <url>
-    <loc>https://albartcoster.github.io/studiereis_italie/kaart.html</loc>
-    <lastmod>2026-09-12T19:54:55.374Z</lastmod>
-  </url>
-  <url>
-    <loc>https://albartcoster.github.io/studiereis_italie/gebied.html</loc>
-    <lastmod>2026-09-12T19:03:47.093Z</lastmod>
-  </url>
-  <url>
-    <loc>https://albartcoster.github.io/studiereis_italie/deelnemers/deelnemers.html</loc>
-    <lastmod>2026-09-12T19:03:47.091Z</lastmod>
+    <loc>https://albartcoster.github.io/studiereis_italie/planning.html</loc>
+    <lastmod>2026-09-12T19:29:34.627Z</lastmod>
   </url>
   <url>
     <loc>https://albartcoster.github.io/studiereis_italie/index.html</loc>
     <lastmod>2026-09-12T20:07:54.713Z</lastmod>
   </url>
   <url>
-    <loc>https://albartcoster.github.io/studiereis_italie/planning.html</loc>
-    <lastmod>2026-09-12T19:29:34.627Z</lastmod>
+    <loc>https://albartcoster.github.io/studiereis_italie/deelnemers_reserve.html</loc>
+    <lastmod>2026-09-13T20:04:05.878Z</lastmod>
+  </url>
+  <url>
+    <loc>https://albartcoster.github.io/studiereis_italie/deelnemers.html</loc>
+    <lastmod>2026-09-13T20:10:33.562Z</lastmod>
+  </url>
+  <url>
+    <loc>https://albartcoster.github.io/studiereis_italie/deelnemers_reserve_1.html</loc>
+    <lastmod>2026-09-13T20:09:48.683Z</lastmod>
+  </url>
+  <url>
+    <loc>https://albartcoster.github.io/studiereis_italie/kaart.html</loc>
+    <lastmod>2026-09-13T12:16:31.119Z</lastmod>
   </url>
 </urlset>

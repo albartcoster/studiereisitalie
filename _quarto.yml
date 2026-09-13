@@ -2,7 +2,6 @@ project:
   type: website
   output-dir: _site
   
-  
 website: 
   page-navigation: true
   title: "Studiereis Dairyconsult naar Italië" 
@@ -36,6 +35,8 @@ website:
         text: Planning van de reis
       - href: kaart.qmd
         text: Kaart van reis
+      - href: deelnemers.qmd
+        text: Lijst deelnemers
 
 format:
   html:
@@ -44,6 +45,7 @@ format:
     toc: true
     email-obfuscation: references
     link-external-icon: false
+    css: styles.css
 
 
 filters:

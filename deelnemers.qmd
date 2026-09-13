@@ -1,0 +1,117 @@
+---
+title: "Deelnemers"
+---
+
+
+```{ojs}
+//| echo: false
+// 1. Het wachtwoord invoerveld
+viewof passwordInput = Inputs.password({
+  label: "Website Wachtwoord:", 
+  placeholder: "Typ het wachtwoord..."
+})
+```
+
+
+```{ojs}
+//| echo: false
+
+// 2. Laad de SDK via de officiële Observable runtime methode
+supabaseSDK = require("@supabase/supabase-js@2").catch(() => window.supabase)
+
+// 3. Je Supabase Project Variabelen (Vervang deze door jouw eigen API-gegevens!)
+supabaseUrl = "https://xkisgdrviypcbzsqsumb.supabase.co"
+supabaseKey = "sb_publishable_oUP_lZR0X6vuIZlT_oEyZQ_KyIdCUum" // Jouw Anon Key
+
+// 4. Initialiseer de client en koppel het wachtwoord reactief aan de header
+supabaseClient = {
+  const sdk = await supabaseSDK;
+  if (!sdk) return null;
+
+  return sdk.createClient(supabaseUrl, supabaseKey, {
+    global: {
+      headers: {
+        'x-access-password': passwordInput // Dit landt direct in je SQL RLS-policy
+      }
+    }
+  });
+}
+
+// 5. Haal de rijen op uit de tabel zodra de client klaar staat en de gebruiker typt
+dataFetch = {
+  if (passwordInput === "") return null; 
+  const client = await supabaseClient;
+  if (!client) return null;
+
+  // Vervang 'beveiligde_data_lijst' door de exacte naam van jouw database-tabel
+  const result = await client
+    .from('deelnemers') 
+    .select('*');
+    
+  return result;
+}
+```
+
+```{ojs}
+//| echo: false
+// 6. Presenteer de data in een interactieve tabel of toon de juiste statusmelding
+{
+  // Status A: Gebruiker heeft nog niks ingevuld
+  if (passwordInput === "") {
+    return html`<div class="alert alert-info">Voorzie de pagina van het juiste wachtwoord om de database te ontgrendelen.</div>`;
+  }
+
+  // Status B: De aanvraag loopt nog bij de database
+  if (!dataFetch) {
+    return html`<p>⏳ Gegevens ophalen en verifiëren bij Supabase...</p>`;
+  }
+
+  // Status C: RLS blokkeert de toegang (fout wachtwoord) of de tabel is leeg
+  if (dataFetch.error || !dataFetch.data || dataFetch.data.length === 0) {
+    if (dataFetch.error) console.error(dataFetch.error);
+    return html`<div class="alert alert-danger">❌ <strong>Toegang geweigerd:</strong> Onjuist wachtwoord of geen rechten om deze tabel te bekijken.</div>`;
+  }
+
+  // Status D: Succes! Het wachtwoord klopte en RLS gaf de data vrij.
+  // Inputs.table maakt hier automatisch een strakke, sorteerbare tabel van.
+  return Inputs.table(dataFetch.data, {
+    required: false,
+    rows: 15, // Aantal rijen dat per pagina getoond wordt
+    
+     columns: ["naam", "achternaam","email","telefoonnummer"], 
+    
+    header: {
+      // Optioneel: Geef hier je SQL-kolomnamen een mooie Nederlandse naam in de weergave
+      naam: "Naam",
+      achternaam: "Achternaam",
+      email: "Email",
+      telefoonnummer: "Telefoonnummer"
+    },
+    
+    format: {
+      // Telefoonnummer opmaak (behouden uit vorige stap)
+      telefoonnummer: (nummer) => {
+        if (!nummer) return "-";
+        const schoonNummer = String(nummer).replace(/[\s\-\(\)]/g, '');
+        return html`<a href="tel:${schoonNummer}" style="text-decoration: none; color: #0275d8;">
+          <i class="bi bi-telephone" style="margin-right: 4px; font-size: 0.9em;"></i>${nummer}
+        </a>`;
+      },
+
+      // ✉️ NIEUW: E-mailadres opmaak
+      email: (adres) => {
+        if (!adres) return "-"; // Als het e-mailadres leeg is in de database
+        
+        // Maak het adres lowercase voor de URL-veiligheid en haal eventuele spaties weg
+        const schoonAdres = String(adres).trim().toLowerCase();
+        
+        // Toon het e-mailadres als een klikbare mailto-link met een envelop-icoontje
+        return html`<a href="mailto:${schoonAdres}" style="text-decoration: none; color: #0275d8;">
+          <i class="bi bi-envelope" style="margin-right: 4px; font-size: 0.9em;"></i>${schoonAdres}
+        </a>`;
+      }
+    }
+  });
+}
+```
+
