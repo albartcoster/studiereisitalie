@@ -1,48 +1,23 @@
 [
   {
-    "objectID": "deelnemers/deelnemers.html",
-    "href": "deelnemers/deelnemers.html",
-    "title": "Deelnemers",
+    "objectID": "planning.html",
+    "href": "planning.html",
+    "title": "Planning en contactgegevens",
     "section": "",
-    "text": "Met deze koppeling vindt u de deelnemerslijst. Ivm privacy hebt u hiervoor een wachtwoord nodig.\nMet deze koppeling kunt u bij de map met trein- en vliegtickets. HIervoor heeft u een wachtwoord nodig, dat u van ons krijgt of heeft gekregen.\nCon este enlace encuentra la lista de participantes (se necesita contraseña)."
-  },
-  {
-    "objectID": "kaart.html",
-    "href": "kaart.html",
-    "title": "kaart",
-    "section": "",
-    "text": "Hier vindt u de kaart van de reis:",
+    "text": "Planning\n\n\n\nDatum\nTijd\nActie\n\n\n\n\n27-10\nHele dag\nAankomst in Hotel Milaan\n\n\n\n19:00\nDiner in hotel\n\n\n28-10\n7:00\nOntbijt in hotel\n\n\n\n8:00\nVertrek met bus\n\n\n\n9:00\nAankomst bedrijf 1\n\n\n\n11:30\nAankomst bedrijf 2\n\n\n\n13:30\nLunch\n\n\n\n15:30\nAankomst bedrijf 3\n\n\n\n18:00\nAankomst in hotel Mantua\n\n\n\n19:00\nDiner in Mantua\n\n\n29-10\n7:30\nOntbijt in Mantua\n\n\n\n9:00\nVertrek naar bedrijf Rain360\n\n\n\n12:00\nLunch\n\n\n\n14:00\nBezoek bedrijf Semex\n\n\n\n17:00\nVertrek richting Milaan\n\n\n\n20:00\nDiner in Milaan\n\n\n30-10\n7:00\nOntbijt\n\n\n\nIeder op zijn tijd\nVlucht naar huis\n\n\n\n\n\nContactgegevens\n\n\n\nIu Salvador\niu@dairyconsult.nl\n+34 670319309\n\n\nJaap van Zwieten\njaap@dairyconsult.nl\n+31 626426483\n\n\nAlbart Coster\nalbart@dairyconsult.nl\n+31.642402923\n\n\nMeint Hofstee\nmeint@dairyconsult.nl\n+31.610052995\n\n\nHenk-Jan Hetterschijt\nhetterschijt@proagrartec.de\n+49.15162519159",
     "crumbs": [
-      "Kaart van reis"
+      "Planning van de reis"
     ]
   },
   {
-    "objectID": "gebied.html",
-    "href": "gebied.html",
-    "title": "Informatie over het gebied en de bedrijven",
+    "objectID": "deelnemers.html",
+    "href": "deelnemers.html",
+    "title": "Deelnemers",
     "section": "",
-    "text": "We overnachten in"
-  },
-  {
-    "objectID": "gebied.html#section",
-    "href": "gebied.html#section",
-    "title": "Informatie over het gebied en de bedrijven",
-    "section": "1.",
-    "text": "1."
-  },
-  {
-    "objectID": "gebied.html#section-1",
-    "href": "gebied.html#section-1",
-    "title": "Informatie over het gebied en de bedrijven",
-    "section": "2.",
-    "text": "2."
-  },
-  {
-    "objectID": "gebied.html#section-2",
-    "href": "gebied.html#section-2",
-    "title": "Informatie over het gebied en de bedrijven",
-    "section": "3.",
-    "text": "3."
+    "text": "// 1. Het wachtwoord invoerveld\nviewof passwordInput = Inputs.password({\n  label: \"Website Wachtwoord:\", \n  placeholder: \"Typ het wachtwoord...\"\n})\n\n\n\n\n\n\n\nsupabaseSDK = require(\"@supabase/supabase-js@2\").catch(() =&gt; window.supabase)\n\n// 3. Je Supabase Project Variabelen (Vervang deze door jouw eigen API-gegevens!)\nsupabaseUrl = \"https://xkisgdrviypcbzsqsumb.supabase.co\"\nsupabaseKey = \"sb_publishable_oUP_lZR0X6vuIZlT_oEyZQ_KyIdCUum\" // Jouw Anon Key\n\n// 4. Initialiseer de client en koppel het wachtwoord reactief aan de header\nsupabaseClient = {\n  const sdk = await supabaseSDK;\n  if (!sdk) return null;\n\n  return sdk.createClient(supabaseUrl, supabaseKey, {\n    global: {\n      headers: {\n        'x-access-password': passwordInput // Dit landt direct in je SQL RLS-policy\n      }\n    }\n  });\n}\n\n// 5. Haal de rijen op uit de tabel zodra de client klaar staat en de gebruiker typt\ndataFetch = {\n  if (passwordInput === \"\") return null; \n  const client = await supabaseClient;\n  if (!client) return null;\n\n  // Vervang 'beveiligde_data_lijst' door de exacte naam van jouw database-tabel\n  const result = await client\n    .from('deelnemers') \n    .select('*');\n    \n  return result;\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n// 6. Presenteer de data in een interactieve tabel of toon de juiste statusmelding\n{\n  // Status A: Gebruiker heeft nog niks ingevuld\n  if (passwordInput === \"\") {\n    return html`&lt;div class=\"alert alert-info\"&gt;Voorzie de pagina van het juiste wachtwoord om de database te ontgrendelen.&lt;/div&gt;`;\n  }\n\n  // Status B: De aanvraag loopt nog bij de database\n  if (!dataFetch) {\n    return html`&lt;p&gt;⏳ Gegevens ophalen en verifiëren bij Supabase...&lt;/p&gt;`;\n  }\n\n  // Status C: RLS blokkeert de toegang (fout wachtwoord) of de tabel is leeg\n  if (dataFetch.error || !dataFetch.data || dataFetch.data.length === 0) {\n    if (dataFetch.error) console.error(dataFetch.error);\n    return html`&lt;div class=\"alert alert-danger\"&gt;❌ &lt;strong&gt;Toegang geweigerd:&lt;/strong&gt; Onjuist wachtwoord of geen rechten om deze tabel te bekijken.&lt;/div&gt;`;\n  }\n\n  // Status D: Succes! Het wachtwoord klopte en RLS gaf de data vrij.\n  // Inputs.table maakt hier automatisch een strakke, sorteerbare tabel van.\n  return Inputs.table(dataFetch.data, {\n    required: false,\n    rows: 15, // Aantal rijen dat per pagina getoond wordt\n    \n     columns: [\"naam\", \"achternaam\",\"email\",\"telefoonnummer\"], \n    \n    header: {\n      // Optioneel: Geef hier je SQL-kolomnamen een mooie Nederlandse naam in de weergave\n      naam: \"Naam\",\n      achternaam: \"Achternaam\",\n      email: \"Email\",\n      telefoonnummer: \"Telefoonnummer\"\n    },\n    \n    format: {\n      // Telefoonnummer opmaak (behouden uit vorige stap)\n      telefoonnummer: (nummer) =&gt; {\n        if (!nummer) return \"-\";\n        const schoonNummer = String(nummer).replace(/[\\s\\-\\(\\)]/g, '');\n        return html`&lt;a href=\"tel:${schoonNummer}\" style=\"text-decoration: none; color: #0275d8;\"&gt;\n          &lt;i class=\"bi bi-telephone\" style=\"margin-right: 4px; font-size: 0.9em;\"&gt;&lt;/i&gt;${nummer}\n        &lt;/a&gt;`;\n      },\n\n      // ✉️ NIEUW: E-mailadres opmaak\n      email: (adres) =&gt; {\n        if (!adres) return \"-\"; // Als het e-mailadres leeg is in de database\n        \n        // Maak het adres lowercase voor de URL-veiligheid en haal eventuele spaties weg\n        const schoonAdres = String(adres).trim().toLowerCase();\n        \n        // Toon het e-mailadres als een klikbare mailto-link met een envelop-icoontje\n        return html`&lt;a href=\"mailto:${schoonAdres}\" style=\"text-decoration: none; color: #0275d8;\"&gt;\n          &lt;i class=\"bi bi-envelope\" style=\"margin-right: 4px; font-size: 0.9em;\"&gt;&lt;/i&gt;${schoonAdres}\n        &lt;/a&gt;`;\n      }\n    }\n  });\n}",
+    "crumbs": [
+      "Lijst deelnemers"
+    ]
   },
   {
     "objectID": "index.html",
@@ -75,48 +50,13 @@
     ]
   },
   {
-    "objectID": "planning_ES.html",
-    "href": "planning_ES.html",
-    "title": "Plánning y contacto",
+    "objectID": "kaart.html",
+    "href": "kaart.html",
+    "title": "kaart",
     "section": "",
-    "text": "Tiempo\nLugar\n\n\n\n\n\n9:50\nSchiphol\nSalido vuelo KL 1701 de NL\n\n\n11:45\nBerlin Schönefeld\nSalido vuelo I23677 de DE\n\n\n12:00\nMadrid Barajas\nLlegada vuelo KL 1701\n\n\n13:00\nCórdoba\nLlegada gente Catalunya\n\n\n14:30\nMadrid Plaza de Atocha\nSalida AVE Plaza de Atocha a Córdoba\n\n\n15:00\nMadrid Barajas\nLlegada vuelo I23677 de DE\n\n\n16:30\nCórdoba\nLlegada gente de NL\n\n\n17:00\nMadrid Plaza de Atocha\nSalida con AVE a Córdoba\n\n\n19:00\nCórdoba\nLlegada gente de DE\n\n\n21:00\nCórdoba, Hotel Conquistador\nCena y introducción\n\n\n\n\n\n\n\n\n\nTiempo\nLugar\n\n\n\n\n\n7:30\nHotel Conquistador\nDesayono\n\n\n8:30\nHotel Conquistador\nSalida con autocar a COVAP\n\n\n9:30\nCOVAP\nLlegada a COVAP\n\n\n9:30 - 13:30\nVisita COVAP\n\n\n\n13:30\nCOVAP\nComida\n\n\n15:00\nGranja Noriega\nGranja vacuno y porcino iberico\n\n\n18:00\nHotel Conquistador\nVuelta\n\n\n19:00\nCórdoba\nVisita guiada por Córdoba, por Berend Coster\n\n\n20:00 +\nCórdoba\nPrograma libre\n\n\n\n\n\n\n\n\n\nTiempo\nLugar\n\n\n\n\n\n7:30\nHotel Conquistador\nDesayono\n\n\n9:00\nHotel Conquistador\nSalida con bus\n\n\n10:00\nGanadería Jesus López\nGranja lechera\n\n\n11:30\nHermanos Pizarro\nGranja lechera\n\n\n14:15\nPozoblanco\nComida\n\n\n16:00\nTorronteras\nVisita a granja lechera\n\n\n19:00\nCórdoba\nCena en Córdoba\n\n\n\n\n\n\n\n\n\nTiempo\nLugar\n\n\n\n\n\n7:00 +\nHotel Conquistador\nDesayuno\n\n\n9:00\nEstación Córdoba\nSalida gente NL\n\n\n10:00\nEstación Córdoba\nSalida gente DE\n\n\n13:30\nMadrid Barajas\nSalida vuelo KL1702 a NL\n\n\n15:40\nSchiphol\nLlegada vuelo KL1702 NL\n\n\n15:55\nMadrid Barajas\nSalida vuelo I23672 a Berlin Schönefeld\n\n\n19:00\nBerlin Schönefeld\nLlegada Berlin"
-  },
-  {
-    "objectID": "planning_ES.html#section",
-    "href": "planning_ES.html#section",
-    "title": "Plánning y contacto",
-    "section": "",
-    "text": "Tiempo\nLugar\n\n\n\n\n\n9:50\nSchiphol\nSalido vuelo KL 1701 de NL\n\n\n11:45\nBerlin Schönefeld\nSalido vuelo I23677 de DE\n\n\n12:00\nMadrid Barajas\nLlegada vuelo KL 1701\n\n\n13:00\nCórdoba\nLlegada gente Catalunya\n\n\n14:30\nMadrid Plaza de Atocha\nSalida AVE Plaza de Atocha a Córdoba\n\n\n15:00\nMadrid Barajas\nLlegada vuelo I23677 de DE\n\n\n16:30\nCórdoba\nLlegada gente de NL\n\n\n17:00\nMadrid Plaza de Atocha\nSalida con AVE a Córdoba\n\n\n19:00\nCórdoba\nLlegada gente de DE\n\n\n21:00\nCórdoba, Hotel Conquistador\nCena y introducción"
-  },
-  {
-    "objectID": "planning_ES.html#section-1",
-    "href": "planning_ES.html#section-1",
-    "title": "Plánning y contacto",
-    "section": "",
-    "text": "Tiempo\nLugar\n\n\n\n\n\n7:30\nHotel Conquistador\nDesayono\n\n\n8:30\nHotel Conquistador\nSalida con autocar a COVAP\n\n\n9:30\nCOVAP\nLlegada a COVAP\n\n\n9:30 - 13:30\nVisita COVAP\n\n\n\n13:30\nCOVAP\nComida\n\n\n15:00\nGranja Noriega\nGranja vacuno y porcino iberico\n\n\n18:00\nHotel Conquistador\nVuelta\n\n\n19:00\nCórdoba\nVisita guiada por Córdoba, por Berend Coster\n\n\n20:00 +\nCórdoba\nPrograma libre"
-  },
-  {
-    "objectID": "planning_ES.html#section-2",
-    "href": "planning_ES.html#section-2",
-    "title": "Plánning y contacto",
-    "section": "",
-    "text": "Tiempo\nLugar\n\n\n\n\n\n7:30\nHotel Conquistador\nDesayono\n\n\n9:00\nHotel Conquistador\nSalida con bus\n\n\n10:00\nGanadería Jesus López\nGranja lechera\n\n\n11:30\nHermanos Pizarro\nGranja lechera\n\n\n14:15\nPozoblanco\nComida\n\n\n16:00\nTorronteras\nVisita a granja lechera\n\n\n19:00\nCórdoba\nCena en Córdoba"
-  },
-  {
-    "objectID": "planning_ES.html#section-3",
-    "href": "planning_ES.html#section-3",
-    "title": "Plánning y contacto",
-    "section": "",
-    "text": "Tiempo\nLugar\n\n\n\n\n\n7:00 +\nHotel Conquistador\nDesayuno\n\n\n9:00\nEstación Córdoba\nSalida gente NL\n\n\n10:00\nEstación Córdoba\nSalida gente DE\n\n\n13:30\nMadrid Barajas\nSalida vuelo KL1702 a NL\n\n\n15:40\nSchiphol\nLlegada vuelo KL1702 NL\n\n\n15:55\nMadrid Barajas\nSalida vuelo I23672 a Berlin Schönefeld\n\n\n19:00\nBerlin Schönefeld\nLlegada Berlin"
-  },
-  {
-    "objectID": "planning.html",
-    "href": "planning.html",
-    "title": "Planning en contactgegevens",
-    "section": "",
-    "text": "Planning\n\n\n\nDatum\nTijd\nActie\n\n\n\n\n27-10\nHele dag\nAankomst in Hotel Milaan\n\n\n\n19:00\nDiner in hotel\n\n\n28-10\n7:00\nOntbijt in hotel\n\n\n\n8:00\nVertrek met bus\n\n\n\n9:00\nAankomst bedrijf 1\n\n\n\n11:30\nAankomst bedrijf 2\n\n\n\n13:30\nLunch\n\n\n\n15:30\nAankomst bedrijf 3\n\n\n\n18:00\nAankomst in hotel Mantua\n\n\n\n19:00\nDiner in Mantua\n\n\n29-10\n7:30\nOntbijt in Mantua\n\n\n\n9:00\nVertrek naar bedrijf Rain360\n\n\n\n12:00\nLunch\n\n\n\n14:00\nBezoek bedrijf Semex\n\n\n\n17:00\nVertrek richting Milaan\n\n\n\n20:00\nDiner in Milaan\n\n\n30-10\n7:00\nOntbijt\n\n\n\nIeder op zijn tijd\nVlucht naar huis\n\n\n\n\n\nContactgegevens\n\n\n\nIu Salvador\niu@dairyconsult.nl\n+34 670319309\n\n\nJaap van Zwieten\njaap@dairyconsult.nl\n+31 626426483\n\n\nAlbart Coster\nalbart@dairyconsult.nl\n+31.642402923\n\n\nMeint Hofstee\nmeint@dairyconsult.nl\n+31.610052995\n\n\nHenk-Jan Hetterschijt\nhetterschijt@proagrartec.de\n+49.15162519159",
+    "text": "Hier vindt u de kaart van de reis:",
     "crumbs": [
-      "Planning van de reis"
+      "Kaart van reis"
     ]
   }
 ]
