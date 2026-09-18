@@ -6,7 +6,7 @@ title: "Planning en contactgegevens"
 
 | Datum | Tijd | Actie | 
 | -- | -- | -- |
-| **27-10** | Hele dag | Aankomst in Hotel Milaan | 
+| **27-10** | Hele dag | Aankomst in [Hotel Santa Barbara, Milaan](www.hotelsantabarbara.it) | 
 |  | 19:00 | Diner in hotel | 
 |**28-10** | 7:00 | Ontbijt in hotel |
 | | 8:00 | Vertrek met bus | 
@@ -19,7 +19,7 @@ title: "Planning en contactgegevens"
 |**29-10** | 7:30 | Ontbijt in Mantua | 
 |  | 9:00 | Vertrek naar bedrijf Rain360 | 
 |  | 12:00 | Lunch | 
-|  | 14:00 | Bezoek bedrijf Semex | 
+|  | 14:00 | Bezoek bedrijf Cristella | 
 |  | 17:00 | Vertrek richting Milaan | 
 |  | 20:00 | Diner in Milaan |
 | **30-10** | 7:00 | Ontbijt | 
@@ -28,11 +28,112 @@ title: "Planning en contactgegevens"
 
 # Contactgegevens {#cgegevens}
 
-|  |  |  |
-|--|---|---|
-|Iu Salvador|<iu@dairyconsult.nl> | +34 670319309 | 
-|Jaap van Zwieten | <jaap@dairyconsult.nl> | +31 626426483 |
-|Albart Coster | <albart@dairyconsult.nl> | +31.642402923 |
-|Meint Hofstee | <meint@dairyconsult.nl> | +31.610052995 | 
-|Henk-Jan Hetterschijt| <hetterschijt@proagrartec.de> | +49.15162519159 | 
+```{ojs}
+//| echo: false
+
+// 2. Laad de SDK via de officiële Observable runtime methode
+supabaseSDK = require("@supabase/supabase-js@2").catch(() => window.supabase)
+
+// 3. Je Supabase Project Variabelen (Vervang deze door jouw eigen API-gegevens!)
+supabaseUrl = "https://xkisgdrviypcbzsqsumb.supabase.co"
+supabaseKey = "sb_publishable_oUP_lZR0X6vuIZlT_oEyZQ_KyIdCUum" // Jouw Anon Key
+passwordInput = "italie2026"
+
+// 4. Initialiseer de client en koppel het wachtwoord reactief aan de header
+supabaseClient = {
+  const sdk = await supabaseSDK;
+  if (!sdk) return null;
+
+  return sdk.createClient(supabaseUrl, supabaseKey, {
+    global: {
+      headers: {
+        'x-access-password': passwordInput // Dit landt direct in je SQL RLS-policy
+      }
+    }
+  });
+}
+
+// 5. Haal de rijen op uit de tabel zodra de client klaar staat en de gebruiker typt
+dataFetch = {
+  if (passwordInput === "") return null; 
+  const client = await supabaseClient;
+  if (!client) return null;
+
+  // Vervang 'beveiligde_data_lijst' door de exacte naam van jouw database-tabel
+  const result = await client
+    .from('deelnemers') 
+    .select('*')
+    .eq('dairyconsult',1);
+    
+  return result;
+}
+```
+
+```{ojs}
+//| echo: false
+// 6. Presenteer de data in een interactieve tabel of toon de juiste statusmelding
+{
+  // Status A: Gebruiker heeft nog niks ingevuld
+  if (passwordInput === "") {
+    return html`<div class="alert alert-info">Voorzie de pagina van het juiste wachtwoord om de database te ontgrendelen.</div>`;
+  }
+
+  // Status B: De aanvraag loopt nog bij de database
+  if (!dataFetch) {
+    return html`<p>⏳ Gegevens ophalen en verifiëren bij Supabase...</p>`;
+  }
+
+  // Status C: RLS blokkeert de toegang (fout wachtwoord) of de tabel is leeg
+  if (dataFetch.error || !dataFetch.data || dataFetch.data.length === 0) {
+    if (dataFetch.error) console.error(dataFetch.error);
+    return html`<div class="alert alert-danger">❌ <strong>Toegang geweigerd:</strong> Onjuist wachtwoord of geen rechten om deze tabel te bekijken.</div>`;
+  }
+
+  // Status D: Succes! Het wachtwoord klopte en RLS gaf de data vrij.
+  // Inputs.table maakt hier automatisch een strakke, sorteerbare tabel van.
+  return Inputs.table(dataFetch.data, {
+    required: false,
+    maxHeight: 500, 
+    rows: 15, // Aantal rijen dat per pagina getoond wordt
+    
+     columns: ["naam", "achternaam","email","telefoonnummer"], 
+    
+    header: {
+      // Optioneel: Geef hier je SQL-kolomnamen een mooie Nederlandse naam in de weergave
+      naam: "Naam",
+      achternaam: "Achternaam",
+      email: "Email",
+      telefoonnummer: "Telefoonnummer"
+    },
+    
+    format: {
+      // Telefoonnummer opmaak (behouden uit vorige stap)
+      telefoonnummer: (nummer) => {
+        if (!nummer) return "-";
+        const schoonNummer = String(nummer).replace(/[\s\-\(\)]/g, '');
+        return html`<a href="tel:${schoonNummer}" style="text-decoration: none; color: #0275d8;">
+          <i class="bi bi-telephone" style="margin-right: 4px; font-size: 0.9em;"></i>${nummer}
+        </a>`;
+      },
+
+      // ✉️ NIEUW: E-mailadres opmaak
+      email: (adres) => {
+        if (!adres) return "-"; // Als het e-mailadres leeg is in de database
+        
+        // Maak het adres lowercase voor de URL-veiligheid en haal eventuele spaties weg
+        const schoonAdres = String(adres).trim().toLowerCase();
+        
+        // Toon het e-mailadres als een klikbare mailto-link met een envelop-icoontje
+        return html`<a href="mailto:${schoonAdres}" style="text-decoration: none; color: #0275d8;">
+          <i class="bi bi-envelope" style="margin-right: 4px; font-size: 0.9em;"></i>${schoonAdres}
+        </a>`;
+      }
+    }
+  });
+}
+
+//  https://www.google.com/search?q=an+access+to+supabase+with+quarto+ojs+to+make+a+table+specific+rows+of+a+table&client=firefox-b-d&hs=yaeq&sca_esv=8886e09268ba5536&sxsrf=APpeQntwzP4sb3mSCTZEuVkuThOdOUOP0A%3A1789711621847&fbs=ABfTbFUyxjQn9bne4DuflY2dNqqKw8M7sFGM6qdQWwcqW3fkMpJGaR7yJJVhrizEJzzDSMmtTOF-4a_oii4ofdfPDEUfA_vjZnmwQ2oqEj6RvQe_E5ebtISHZ_ssCQGvdOHMyv9NvflZhZ3UCq268L3o5Z_nICSJNbMnZN5S-s7P3M5pTT0Cn1PKIdfpzXmhj8sL6mad5kSE&vsint=&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwjzwOGru_eWAxXW5gIHHWUROH8Q2J8OegQIEhAD&biw=1152&bih=529&dpr=1.67&mstk=AUtExfDzAfCTtJfu8NqEoLP8UwTDKYU0qMePrhzi7DB9Lyz1aIhBrjSAwDBbXyo39qlaeXTwD7V2B5Uh2BIMNwQqvau26wCz0uvLeK2eg0x9qm-skzvXOvd2AgbsNmG-dVfmLlQ-iRkyCHoTTAmsL67gi_-d66_7nJZ7OpZz5F2yxrCaSAoWd1Vu83iF6iYbnsgnNTNzWSg6OIXSiq112CaFN3T0ZgIWboF-36I_8wOUX-k9z85dsTVN5kVHAujvjmpfn1TsXXD1Gul93w&csuir=1&mtid=CdWsavvfEIzqi-gPuvXomQk&udm=50
+```
+
+--
 
