@@ -62,6 +62,30 @@ upsert_query <- "
     ;
 "
 dbExecute(con, upsert_query)
+dbExecute(con, "DROP TABLE temp_upload;")
+
+# 1. Maak een voorbeeld data.frame aan om te uploaden
+bestand <- 'planning.xlsx'
+df <- read_excel(bestand,col_names = TRUE) 
+  
+dbWriteTable(con, name = "temp_upload", value = df, row.names = FALSE, overwrite = TRUE)
+
+# 2. Voer de UPSERT uit op basis van het conflict op (naam, achternaam)
+# Let op: de automatische 'id' kolom laten we weg bij het invoegen, die genereert Supabase zelf voor nieuwe rijen.
+upsert_query <- "
+  INSERT INTO planning (datum, tijd, actie,locatie,url)
+  SELECT datum, tijd, actie,locatie,url FROM temp_upload
+  ON CONFLICT (datum,tijd) 
+  DO UPDATE SET 
+    actie = EXCLUDED.actie,
+    locatie = EXCLUDED.locatie,
+    url = EXCLUDED.url
+    ;
+"
+dbExecute(con, upsert_query)
+
+
+
 
 # 3. Ruim de tijdelijke tabel op
 dbExecute(con, "DROP TABLE temp_upload;")
