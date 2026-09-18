@@ -181,7 +181,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#cgegevens" id="toc-cgegevens" class="nav-link active" data-scroll-target="#cgegevens">Contactgegevens</a></li>
+  <li><a href="#planning" id="toc-planning" class="nav-link active" data-scroll-target="#planning">Planning</a></li>
+  <li><a href="#cgegevens" id="toc-cgegevens" class="nav-link" data-scroll-target="#cgegevens">Contactgegevens</a></li>
   </ul>
 </nav>
     </div>
@@ -207,27 +208,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="planning" class="level1">
+<h1>Planning</h1>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="9" data-source-offset="-63"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 8;"><span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>supabaseSDK <span class="op">=</span> <span class="pp">require</span>(<span class="st">"@supabase/supabase-js@2"</span>)<span class="op">.</span><span class="fu">catch</span>(() <span class="kw">=&gt;</span> <span class="bu">window</span><span class="op">.</span><span class="at">supabase</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">// 3. Je Supabase Project Variabelen (Vervang deze door jouw eigen API-gegevens!)</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>supabaseUrl <span class="op">=</span> <span class="st">"https://xkisgdrviypcbzsqsumb.supabase.co"</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>supabaseKey <span class="op">=</span> <span class="st">"sb_publishable_oUP_lZR0X6vuIZlT_oEyZQ_KyIdCUum"</span> <span class="co">// Jouw Anon Key</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>passwordInput <span class="op">=</span> <span class="st">"italie2026"</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">// 4. Initialiseer de client en koppel het wachtwoord reactief aan de header</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>supabaseClient <span class="op">=</span> {</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> sdk <span class="op">=</span> <span class="cf">await</span> supabaseSDK<span class="op">;</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>sdk) <span class="cf">return</span> <span class="kw">null</span><span class="op">;</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> sdk<span class="op">.</span><span class="fu">createClient</span>(supabaseUrl<span class="op">,</span> supabaseKey<span class="op">,</span> {</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="dt">global</span><span class="op">:</span> {</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>      <span class="dt">headers</span><span class="op">:</span> {</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">'x-access-password'</span><span class="op">:</span> passwordInput <span class="co">// Dit landt direct in je SQL RLS-policy</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="11" data-source-offset="-63"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 10;"><span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>supabaseSDK <span class="op">=</span> <span class="pp">require</span>(<span class="st">"@supabase/supabase-js@2"</span>)<span class="op">.</span><span class="fu">catch</span>(() <span class="kw">=&gt;</span> <span class="bu">window</span><span class="op">.</span><span class="at">supabase</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">// 3. Je Supabase Project Variabelen (Vervang deze door jouw eigen API-gegevens!)</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>supabaseUrl <span class="op">=</span> <span class="st">"https://xkisgdrviypcbzsqsumb.supabase.co"</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>supabaseKey <span class="op">=</span> <span class="st">"sb_publishable_oUP_lZR0X6vuIZlT_oEyZQ_KyIdCUum"</span> <span class="co">// Jouw Anon Key</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>passwordInput <span class="op">=</span> <span class="st">"italie2026"</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">// 4. Initialiseer de client en koppel het wachtwoord reactief aan de header</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>supabaseClient <span class="op">=</span> {</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> sdk <span class="op">=</span> <span class="cf">await</span> supabaseSDK<span class="op">;</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>sdk) <span class="cf">return</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> sdk<span class="op">.</span><span class="fu">createClient</span>(supabaseUrl<span class="op">,</span> supabaseKey<span class="op">,</span> {</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="dt">global</span><span class="op">:</span> {</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>      <span class="dt">headers</span><span class="op">:</span> {</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">'x-access-password'</span><span class="op">:</span> passwordInput <span class="co">// Dit landt direct in je SQL RLS-policy</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -265,63 +268,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="37" data-source-offset="-86"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 36;"><span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>rawPlanning <span class="op">=</span> {</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> client <span class="op">=</span> <span class="cf">await</span> supabaseClient<span class="op">;</span></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>client) <span class="cf">return</span> <span class="kw">null</span><span class="op">;</span></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Vervang 'beveiligde_data_lijst' door de exacte naam van jouw database-tabel</span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> result <span class="op">=</span> <span class="cf">await</span> client</span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">from</span>(<span class="st">'planning'</span>) </span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">select</span>(<span class="st">'*'</span>)<span class="op">;</span></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> result<span class="op">;</span></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>processedPlanning <span class="op">=</span> {</span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>rawPlanning <span class="op">||</span> <span class="op">!</span>rawPlanning<span class="op">.</span><span class="at">data</span>) <span class="cf">return</span> []<span class="op">;</span></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Sorteer chronologisch op datum en tijd</span></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> sorted <span class="op">=</span> [<span class="op">...</span>rawPlanning<span class="op">.</span><span class="at">data</span>]<span class="op">.</span><span class="fu">sort</span>((a<span class="op">,</span> b) <span class="kw">=&gt;</span> </span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    d3<span class="op">.</span><span class="fu">ascending</span>(a<span class="op">.</span><span class="at">datum</span><span class="op">,</span> b<span class="op">.</span><span class="at">datum</span>) <span class="op">||</span> d3<span class="op">.</span><span class="fu">ascending</span>(a<span class="op">.</span><span class="at">tijd</span><span class="op">,</span> b<span class="op">.</span><span class="at">tijd</span>)</span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Vervang herhalende datums door een lege string</span></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> sorted<span class="op">.</span><span class="fu">map</span>((d<span class="op">,</span> i<span class="op">,</span> arr) <span class="kw">=&gt;</span> ({</span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span>d<span class="op">,</span></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>    <span class="dt">dateDisplay</span><span class="op">:</span> (i <span class="op">===</span> <span class="dv">0</span> <span class="op">||</span> d<span class="op">.</span><span class="at">datum</span> <span class="op">!==</span> arr[i <span class="op">-</span> <span class="dv">1</span>]<span class="op">.</span><span class="at">datum</span>) <span class="op">?</span> d<span class="op">.</span><span class="at">datum</span> <span class="op">:</span> <span class="st">""</span></span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>  }))<span class="op">;</span></span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Status A: Gebruiker heeft nog niks ingevuld</span></span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Status B: De aanvraag loopt nog bij de database</span></span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>rawPlanning) {</span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;p&gt;⏳ Gegevens ophalen en verifiëren bij Supabase...&lt;/p&gt;`</span><span class="op">;</span></span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Status C: RLS blokkeert de toegang (fout wachtwoord) of de tabel is leeg</span></span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (rawPlanning<span class="op">.</span><span class="at">error</span> <span class="op">||</span> <span class="op">!</span>rawPlanning<span class="op">.</span><span class="at">data</span> <span class="op">||</span> rawPlanning<span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">length</span> <span class="op">===</span> <span class="dv">0</span>) {</span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (rawPlanning<span class="op">.</span><span class="at">error</span>) <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(rawPlanning<span class="op">.</span><span class="at">error</span>)<span class="op">;</span></span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;div class="alert alert-danger"&gt;❌ &lt;strong&gt;Toegang geweigerd:&lt;/strong&gt; Oten om deze tabel te bekijken.&lt;/div&gt;`</span><span class="op">;</span></span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Status D: Succes! Het wachtwoord klopte en RLS gaf de data vrij.</span></span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Inputs.table maakt hier automatisch een strakke, sorteerbare tabel van.</span></span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> Inputs<span class="op">.</span><span class="fu">table</span>(processedPlanning<span class="op">,</span> {</span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>  <span class="dt">columns</span><span class="op">:</span> [<span class="st">"dateDisplay"</span><span class="op">,</span> <span class="st">"tijd"</span><span class="op">,</span> <span class="st">"actie"</span><span class="op">,</span><span class="st">"locatie"</span><span class="op">,</span><span class="st">"url"</span>]<span class="op">,</span> <span class="co">// Pas 'activity' aan naar jouw kolomnaam</span></span>
-<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>  <span class="dt">header</span><span class="op">:</span> { <span class="dt">dateDisplay</span><span class="op">:</span> <span class="st">"Datum"</span><span class="op">,</span> </span>
-<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>            <span class="dt">tijd</span><span class="op">:</span> <span class="st">"Tijd"</span><span class="op">,</span></span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>            <span class="dt">actie</span><span class="op">:</span> <span class="st">"Activiteit"</span><span class="op">,</span></span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>            <span class="dt">locatie</span><span class="op">:</span> <span class="st">"Plaats"</span><span class="op">,</span></span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>            <span class="dt">url</span><span class="op">:</span> <span class="st">"url"</span>}<span class="op">,</span></span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>  <span class="dt">format</span><span class="op">:</span> {</span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Deze functie zet de tekst automatisch om in een klikbare link</span></span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>    <span class="dt">url</span><span class="op">:</span> (value) <span class="kw">=&gt;</span> value </span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>      <span class="op">?</span> <span class="fu">html</span><span class="vs">`&lt;a href="</span><span class="sc">${</span>value<span class="sc">}</span><span class="vs">" target="_blank" style="color: #0066cc; text-decoration: underline;"&gt;Open Link&lt;/a&gt;`</span> </span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>      <span class="op">:</span> <span class="st">""</span></span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="39" data-source-offset="-86"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 38;"><span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>rawPlanning <span class="op">=</span> {</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> client <span class="op">=</span> <span class="cf">await</span> supabaseClient<span class="op">;</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>client) <span class="cf">return</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Vervang 'beveiligde_data_lijst' door de exacte naam van jouw database-tabel</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> result <span class="op">=</span> <span class="cf">await</span> client</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">from</span>(<span class="st">'planning'</span>) </span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">select</span>(<span class="st">'*'</span>)<span class="op">;</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> result<span class="op">;</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>processedPlanning <span class="op">=</span> {</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>rawPlanning <span class="op">||</span> <span class="op">!</span>rawPlanning<span class="op">.</span><span class="at">data</span>) <span class="cf">return</span> []<span class="op">;</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Sorteer chronologisch op datum en tijd</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> sorted <span class="op">=</span> [<span class="op">...</span>rawPlanning<span class="op">.</span><span class="at">data</span>]<span class="op">.</span><span class="fu">sort</span>((a<span class="op">,</span> b) <span class="kw">=&gt;</span> </span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>    d3<span class="op">.</span><span class="fu">ascending</span>(a<span class="op">.</span><span class="at">datum</span><span class="op">,</span> b<span class="op">.</span><span class="at">datum</span>) <span class="op">||</span> d3<span class="op">.</span><span class="fu">ascending</span>(a<span class="op">.</span><span class="at">tijd</span><span class="op">,</span> b<span class="op">.</span><span class="at">tijd</span>)</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Vervang herhalende datums door een lege string</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> sorted<span class="op">.</span><span class="fu">map</span>((d<span class="op">,</span> i<span class="op">,</span> arr) <span class="kw">=&gt;</span> ({</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span>d<span class="op">,</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>    <span class="dt">dateDisplay</span><span class="op">:</span> (i <span class="op">===</span> <span class="dv">0</span> <span class="op">||</span> d<span class="op">.</span><span class="at">datum</span> <span class="op">!==</span> arr[i <span class="op">-</span> <span class="dv">1</span>]<span class="op">.</span><span class="at">datum</span>) <span class="op">?</span> d<span class="op">.</span><span class="at">datum</span> <span class="op">:</span> <span class="st">""</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  }))<span class="op">;</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Status A: Gebruiker heeft nog niks ingevuld</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Status B: De aanvraag loopt nog bij de database</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>rawPlanning) {</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;p&gt;⏳ Gegevens ophalen en verifiëren bij Supabase...&lt;/p&gt;`</span><span class="op">;</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Status C: RLS blokkeert de toegang (fout wachtwoord) of de tabel is leeg</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (rawPlanning<span class="op">.</span><span class="at">error</span> <span class="op">||</span> <span class="op">!</span>rawPlanning<span class="op">.</span><span class="at">data</span> <span class="op">||</span> rawPlanning<span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">length</span> <span class="op">===</span> <span class="dv">0</span>) {</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (rawPlanning<span class="op">.</span><span class="at">error</span>) <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(rawPlanning<span class="op">.</span><span class="at">error</span>)<span class="op">;</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;div class="alert alert-danger"&gt;❌ &lt;strong&gt;Toegang geweigerd:&lt;/strong&gt; Oten om deze tabel te bekijken.&lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Status D: Succes! Het wachtwoord klopte en RLS gaf de data vrij.</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Inputs.table maakt hier automatisch een strakke, sorteerbare tabel van.</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> Inputs<span class="op">.</span><span class="fu">table</span>(processedPlanning<span class="op">,</span> {</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>  <span class="dt">columns</span><span class="op">:</span> [<span class="st">"dateDisplay"</span><span class="op">,</span> <span class="st">"tijd"</span><span class="op">,</span> <span class="st">"actie"</span><span class="op">,</span><span class="st">"locatie"</span><span class="op">,</span><span class="st">"url"</span>]<span class="op">,</span> <span class="co">// Pas 'activity' aan naar jouw kolomnaam</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>  <span class="dt">header</span><span class="op">:</span> { <span class="dt">dateDisplay</span><span class="op">:</span> <span class="st">"Datum"</span><span class="op">,</span> </span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>            <span class="dt">tijd</span><span class="op">:</span> <span class="st">"Tijd"</span><span class="op">,</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>            <span class="dt">actie</span><span class="op">:</span> <span class="st">"Activiteit"</span><span class="op">,</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>            <span class="dt">locatie</span><span class="op">:</span> <span class="st">"Plaats"</span><span class="op">,</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>            <span class="dt">url</span><span class="op">:</span> <span class="st">"url"</span>}<span class="op">,</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>  <span class="dt">format</span><span class="op">:</span> {</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Deze functie zet de tekst automatisch om in een klikbare link</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>    <span class="dt">url</span><span class="op">:</span> (value) <span class="kw">=&gt;</span> value </span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>      <span class="op">?</span> <span class="fu">html</span><span class="vs">`&lt;a href="</span><span class="sc">${</span>value<span class="sc">}</span><span class="vs">" target="_blank" style="color: #0066cc; text-decoration: underline;"&gt;Open Link&lt;/a&gt;`</span> </span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>      <span class="op">:</span> <span class="st">""</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-2-1" data-nodetype="declaration">
@@ -344,81 +347,82 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
 <section id="cgegevens" class="level1">
 <h1>Contactgegevens</h1>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="105" data-source-offset="-86"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 104;"><span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a>dataFetch <span class="op">=</span> {</span>
-<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> client <span class="op">=</span> <span class="cf">await</span> supabaseClient<span class="op">;</span></span>
-<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>client) <span class="cf">return</span> <span class="kw">null</span><span class="op">;</span></span>
-<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Vervang 'beveiligde_data_lijst' door de exacte naam van jouw database-tabel</span></span>
-<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> result <span class="op">=</span> <span class="cf">await</span> client</span>
-<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">from</span>(<span class="st">'deelnemers'</span>) </span>
-<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">select</span>(<span class="st">'*'</span>)</span>
-<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">eq</span>(<span class="st">'dairyconsult'</span><span class="op">,</span><span class="dv">1</span>)<span class="op">;</span></span>
-<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> result<span class="op">;</span></span>
-<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="107" data-source-offset="-86"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 106;"><span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a>dataFetch <span class="op">=</span> {</span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> client <span class="op">=</span> <span class="cf">await</span> supabaseClient<span class="op">;</span></span>
+<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>client) <span class="cf">return</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Vervang 'beveiligde_data_lijst' door de exacte naam van jouw database-tabel</span></span>
+<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> result <span class="op">=</span> <span class="cf">await</span> client</span>
+<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">from</span>(<span class="st">'deelnemers'</span>) </span>
+<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">select</span>(<span class="st">'*'</span>)</span>
+<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">eq</span>(<span class="st">'dairyconsult'</span><span class="op">,</span><span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> result<span class="op">;</span></span>
+<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a><span class="co">//| echo: false</span></span>
-<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a><span class="co">// 6. Presenteer de data in een interactieve tabel of toon de juiste statusmelding</span></span>
-<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Status A: Gebruiker heeft nog niks ingevuld</span></span>
-<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Status B: De aanvraag loopt nog bij de database</span></span>
-<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>dataFetch) {</span>
-<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;p&gt;⏳ Gegevens ophalen en verifiëren bij Supabase...&lt;/p&gt;`</span><span class="op">;</span></span>
-<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Status C: RLS blokkeert de toegang (fout wachtwoord) of de tabel is leeg</span></span>
-<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (dataFetch<span class="op">.</span><span class="at">error</span> <span class="op">||</span> <span class="op">!</span>dataFetch<span class="op">.</span><span class="at">data</span> <span class="op">||</span> dataFetch<span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">length</span> <span class="op">===</span> <span class="dv">0</span>) {</span>
-<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (dataFetch<span class="op">.</span><span class="at">error</span>) <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(dataFetch<span class="op">.</span><span class="at">error</span>)<span class="op">;</span></span>
-<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;div class="alert alert-danger"&gt;❌ &lt;strong&gt;Toegang geweigerd:&lt;/strong&gt; Onjuist wachtwoord of geen rechten om deze tabel te bekijken.&lt;/div&gt;`</span><span class="op">;</span></span>
-<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Status D: Succes! Het wachtwoord klopte en RLS gaf de data vrij.</span></span>
-<span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Inputs.table maakt hier automatisch een strakke, sorteerbare tabel van.</span></span>
-<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> Inputs<span class="op">.</span><span class="fu">table</span>(dataFetch<span class="op">.</span><span class="at">data</span><span class="op">,</span> {</span>
-<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a>    <span class="dt">required</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span></span>
-<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a>    <span class="dt">maxHeight</span><span class="op">:</span> <span class="dv">500</span><span class="op">,</span> </span>
-<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a>    <span class="dt">rows</span><span class="op">:</span> <span class="dv">15</span><span class="op">,</span> <span class="co">// Aantal rijen dat per pagina getoond wordt</span></span>
-<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a>     <span class="dt">columns</span><span class="op">:</span> [<span class="st">"naam"</span><span class="op">,</span> <span class="st">"achternaam"</span><span class="op">,</span><span class="st">"email"</span><span class="op">,</span><span class="st">"telefoonnummer"</span>]<span class="op">,</span> </span>
+<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a><span class="co">//| echo: false</span></span>
+<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a><span class="co">// 6. Presenteer de data in een interactieve tabel of toon de juiste statusmelding</span></span>
+<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Status A: Gebruiker heeft nog niks ingevuld</span></span>
+<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Status B: De aanvraag loopt nog bij de database</span></span>
+<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>dataFetch) {</span>
+<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;p&gt;⏳ Gegevens ophalen en verifiëren bij Supabase...&lt;/p&gt;`</span><span class="op">;</span></span>
+<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Status C: RLS blokkeert de toegang (fout wachtwoord) of de tabel is leeg</span></span>
+<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (dataFetch<span class="op">.</span><span class="at">error</span> <span class="op">||</span> <span class="op">!</span>dataFetch<span class="op">.</span><span class="at">data</span> <span class="op">||</span> dataFetch<span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">length</span> <span class="op">===</span> <span class="dv">0</span>) {</span>
+<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (dataFetch<span class="op">.</span><span class="at">error</span>) <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(dataFetch<span class="op">.</span><span class="at">error</span>)<span class="op">;</span></span>
+<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;div class="alert alert-danger"&gt;❌ &lt;strong&gt;Toegang geweigerd:&lt;/strong&gt; Onjuist wachtwoord of geen rechten om deze tabel te bekijken.&lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Status D: Succes! Het wachtwoord klopte en RLS gaf de data vrij.</span></span>
+<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Inputs.table maakt hier automatisch een strakke, sorteerbare tabel van.</span></span>
+<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> Inputs<span class="op">.</span><span class="fu">table</span>(dataFetch<span class="op">.</span><span class="at">data</span><span class="op">,</span> {</span>
+<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a>    <span class="dt">required</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span></span>
+<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a>    <span class="dt">maxHeight</span><span class="op">:</span> <span class="dv">500</span><span class="op">,</span> </span>
+<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a>    <span class="dt">rows</span><span class="op">:</span> <span class="dv">15</span><span class="op">,</span> <span class="co">// Aantal rijen dat per pagina getoond wordt</span></span>
 <span id="cb3-143"><a href="#cb3-143" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-144"><a href="#cb3-144" aria-hidden="true" tabindex="-1"></a>    <span class="dt">header</span><span class="op">:</span> {</span>
-<span id="cb3-145"><a href="#cb3-145" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Optioneel: Geef hier je SQL-kolomnamen een mooie Nederlandse naam in de weergave</span></span>
-<span id="cb3-146"><a href="#cb3-146" aria-hidden="true" tabindex="-1"></a>      <span class="dt">naam</span><span class="op">:</span> <span class="st">"Naam"</span><span class="op">,</span></span>
-<span id="cb3-147"><a href="#cb3-147" aria-hidden="true" tabindex="-1"></a>      <span class="dt">achternaam</span><span class="op">:</span> <span class="st">"Achternaam"</span><span class="op">,</span></span>
-<span id="cb3-148"><a href="#cb3-148" aria-hidden="true" tabindex="-1"></a>      <span class="dt">email</span><span class="op">:</span> <span class="st">"Email"</span><span class="op">,</span></span>
-<span id="cb3-149"><a href="#cb3-149" aria-hidden="true" tabindex="-1"></a>      <span class="dt">telefoonnummer</span><span class="op">:</span> <span class="st">"Telefoonnummer"</span></span>
-<span id="cb3-150"><a href="#cb3-150" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
-<span id="cb3-151"><a href="#cb3-151" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-152"><a href="#cb3-152" aria-hidden="true" tabindex="-1"></a>    <span class="dt">format</span><span class="op">:</span> {</span>
-<span id="cb3-153"><a href="#cb3-153" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Telefoonnummer opmaak (behouden uit vorige stap)</span></span>
-<span id="cb3-154"><a href="#cb3-154" aria-hidden="true" tabindex="-1"></a>      <span class="dt">telefoonnummer</span><span class="op">:</span> (nummer) <span class="kw">=&gt;</span> {</span>
-<span id="cb3-155"><a href="#cb3-155" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (<span class="op">!</span>nummer) <span class="cf">return</span> <span class="st">"-"</span><span class="op">;</span></span>
-<span id="cb3-156"><a href="#cb3-156" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> schoonNummer <span class="op">=</span> <span class="bu">String</span>(nummer)<span class="op">.</span><span class="fu">replace</span>(<span class="ss">/</span><span class="sc">[\s\-\(\)]</span><span class="ss">/g</span><span class="op">,</span> <span class="st">''</span>)<span class="op">;</span></span>
-<span id="cb3-157"><a href="#cb3-157" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;a href="tel:</span><span class="sc">${</span>schoonNummer<span class="sc">}</span><span class="vs">" style="text-decoration: none; color: #0275d8;"&gt;</span></span>
-<span id="cb3-158"><a href="#cb3-158" aria-hidden="true" tabindex="-1"></a><span class="vs">          &lt;i class="bi bi-telephone" style="margin-right: 4px; font-size: 0.9em;"&gt;&lt;/i&gt;</span><span class="sc">${</span>nummer<span class="sc">}</span></span>
-<span id="cb3-159"><a href="#cb3-159" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;/a&gt;`</span><span class="op">;</span></span>
-<span id="cb3-160"><a href="#cb3-160" aria-hidden="true" tabindex="-1"></a>      }<span class="op">,</span></span>
-<span id="cb3-161"><a href="#cb3-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-162"><a href="#cb3-162" aria-hidden="true" tabindex="-1"></a>      <span class="co">// ✉️ NIEUW: E-mailadres opmaak</span></span>
-<span id="cb3-163"><a href="#cb3-163" aria-hidden="true" tabindex="-1"></a>      <span class="dt">email</span><span class="op">:</span> (adres) <span class="kw">=&gt;</span> {</span>
-<span id="cb3-164"><a href="#cb3-164" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (<span class="op">!</span>adres) <span class="cf">return</span> <span class="st">"-"</span><span class="op">;</span> <span class="co">// Als het e-mailadres leeg is in de database</span></span>
-<span id="cb3-165"><a href="#cb3-165" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb3-166"><a href="#cb3-166" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Maak het adres lowercase voor de URL-veiligheid en haal eventuele spaties weg</span></span>
-<span id="cb3-167"><a href="#cb3-167" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> schoonAdres <span class="op">=</span> <span class="bu">String</span>(adres)<span class="op">.</span><span class="fu">trim</span>()<span class="op">.</span><span class="fu">toLowerCase</span>()<span class="op">;</span></span>
-<span id="cb3-168"><a href="#cb3-168" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb3-169"><a href="#cb3-169" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Toon het e-mailadres als een klikbare mailto-link met een envelop-icoontje</span></span>
-<span id="cb3-170"><a href="#cb3-170" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;a href="mailto:</span><span class="sc">${</span>schoonAdres<span class="sc">}</span><span class="vs">" style="text-decoration: none; color: #0275d8;"&gt;</span></span>
-<span id="cb3-171"><a href="#cb3-171" aria-hidden="true" tabindex="-1"></a><span class="vs">          &lt;i class="bi bi-envelope" style="margin-right: 4px; font-size: 0.9em;"&gt;&lt;/i&gt;</span><span class="sc">${</span>schoonAdres<span class="sc">}</span></span>
-<span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;/a&gt;`</span><span class="op">;</span></span>
-<span id="cb3-173"><a href="#cb3-173" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb3-174"><a href="#cb3-174" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb3-175"><a href="#cb3-175" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
-<span id="cb3-176"><a href="#cb3-176" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-144"><a href="#cb3-144" aria-hidden="true" tabindex="-1"></a>     <span class="dt">columns</span><span class="op">:</span> [<span class="st">"naam"</span><span class="op">,</span> <span class="st">"achternaam"</span><span class="op">,</span><span class="st">"email"</span><span class="op">,</span><span class="st">"telefoonnummer"</span>]<span class="op">,</span> </span>
+<span id="cb3-145"><a href="#cb3-145" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-146"><a href="#cb3-146" aria-hidden="true" tabindex="-1"></a>    <span class="dt">header</span><span class="op">:</span> {</span>
+<span id="cb3-147"><a href="#cb3-147" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Optioneel: Geef hier je SQL-kolomnamen een mooie Nederlandse naam in de weergave</span></span>
+<span id="cb3-148"><a href="#cb3-148" aria-hidden="true" tabindex="-1"></a>      <span class="dt">naam</span><span class="op">:</span> <span class="st">"Naam"</span><span class="op">,</span></span>
+<span id="cb3-149"><a href="#cb3-149" aria-hidden="true" tabindex="-1"></a>      <span class="dt">achternaam</span><span class="op">:</span> <span class="st">"Achternaam"</span><span class="op">,</span></span>
+<span id="cb3-150"><a href="#cb3-150" aria-hidden="true" tabindex="-1"></a>      <span class="dt">email</span><span class="op">:</span> <span class="st">"Email"</span><span class="op">,</span></span>
+<span id="cb3-151"><a href="#cb3-151" aria-hidden="true" tabindex="-1"></a>      <span class="dt">telefoonnummer</span><span class="op">:</span> <span class="st">"Telefoonnummer"</span></span>
+<span id="cb3-152"><a href="#cb3-152" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span></span>
+<span id="cb3-153"><a href="#cb3-153" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-154"><a href="#cb3-154" aria-hidden="true" tabindex="-1"></a>    <span class="dt">format</span><span class="op">:</span> {</span>
+<span id="cb3-155"><a href="#cb3-155" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Telefoonnummer opmaak (behouden uit vorige stap)</span></span>
+<span id="cb3-156"><a href="#cb3-156" aria-hidden="true" tabindex="-1"></a>      <span class="dt">telefoonnummer</span><span class="op">:</span> (nummer) <span class="kw">=&gt;</span> {</span>
+<span id="cb3-157"><a href="#cb3-157" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (<span class="op">!</span>nummer) <span class="cf">return</span> <span class="st">"-"</span><span class="op">;</span></span>
+<span id="cb3-158"><a href="#cb3-158" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> schoonNummer <span class="op">=</span> <span class="bu">String</span>(nummer)<span class="op">.</span><span class="fu">replace</span>(<span class="ss">/</span><span class="sc">[\s\-\(\)]</span><span class="ss">/g</span><span class="op">,</span> <span class="st">''</span>)<span class="op">;</span></span>
+<span id="cb3-159"><a href="#cb3-159" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;a href="tel:</span><span class="sc">${</span>schoonNummer<span class="sc">}</span><span class="vs">" style="text-decoration: none; color: #0275d8;"&gt;</span></span>
+<span id="cb3-160"><a href="#cb3-160" aria-hidden="true" tabindex="-1"></a><span class="vs">          &lt;i class="bi bi-telephone" style="margin-right: 4px; font-size: 0.9em;"&gt;&lt;/i&gt;</span><span class="sc">${</span>nummer<span class="sc">}</span></span>
+<span id="cb3-161"><a href="#cb3-161" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;/a&gt;`</span><span class="op">;</span></span>
+<span id="cb3-162"><a href="#cb3-162" aria-hidden="true" tabindex="-1"></a>      }<span class="op">,</span></span>
+<span id="cb3-163"><a href="#cb3-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-164"><a href="#cb3-164" aria-hidden="true" tabindex="-1"></a>      <span class="co">// ✉️ NIEUW: E-mailadres opmaak</span></span>
+<span id="cb3-165"><a href="#cb3-165" aria-hidden="true" tabindex="-1"></a>      <span class="dt">email</span><span class="op">:</span> (adres) <span class="kw">=&gt;</span> {</span>
+<span id="cb3-166"><a href="#cb3-166" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (<span class="op">!</span>adres) <span class="cf">return</span> <span class="st">"-"</span><span class="op">;</span> <span class="co">// Als het e-mailadres leeg is in de database</span></span>
+<span id="cb3-167"><a href="#cb3-167" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-168"><a href="#cb3-168" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Maak het adres lowercase voor de URL-veiligheid en haal eventuele spaties weg</span></span>
+<span id="cb3-169"><a href="#cb3-169" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> schoonAdres <span class="op">=</span> <span class="bu">String</span>(adres)<span class="op">.</span><span class="fu">trim</span>()<span class="op">.</span><span class="fu">toLowerCase</span>()<span class="op">;</span></span>
+<span id="cb3-170"><a href="#cb3-170" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-171"><a href="#cb3-171" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Toon het e-mailadres als een klikbare mailto-link met een envelop-icoontje</span></span>
+<span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;a href="mailto:</span><span class="sc">${</span>schoonAdres<span class="sc">}</span><span class="vs">" style="text-decoration: none; color: #0275d8;"&gt;</span></span>
+<span id="cb3-173"><a href="#cb3-173" aria-hidden="true" tabindex="-1"></a><span class="vs">          &lt;i class="bi bi-envelope" style="margin-right: 4px; font-size: 0.9em;"&gt;&lt;/i&gt;</span><span class="sc">${</span>schoonAdres<span class="sc">}</span></span>
+<span id="cb3-174"><a href="#cb3-174" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;/a&gt;`</span><span class="op">;</span></span>
+<span id="cb3-175"><a href="#cb3-175" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb3-176"><a href="#cb3-176" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-177"><a href="#cb3-177" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb3-178"><a href="#cb3-178" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-3-1" data-nodetype="declaration">
