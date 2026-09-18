@@ -46,6 +46,21 @@ rawPlanning = {
   return result;
 }
 
+processedPlanning = {
+  if (!rawPlanning || !rawPlanning.data) return [];
+  
+  // Sorteer chronologisch op datum en tijd
+  const sorted = [...rawPlanning.data].sort((a, b) => 
+    d3.ascending(a.datum, b.datum) || d3.ascending(a.tijd, b.tijd)
+  );
+
+  // Vervang herhalende datums door een lege string
+  return sorted.map((d, i, arr) => ({
+    ...d,
+    dateDisplay: (i === 0 || d.datum !== arr[i - 1].datum) ? d.datum : ""
+  }));
+}
+
 {
   // Status A: Gebruiker heeft nog niks ingevuld
   // Status B: De aanvraag loopt nog bij de database
@@ -61,23 +76,20 @@ rawPlanning = {
 
   // Status D: Succes! Het wachtwoord klopte en RLS gaf de data vrij.
   // Inputs.table maakt hier automatisch een strakke, sorteerbare tabel van.
-  return Inputs.table(rawPlanning.data, {
-    required: false,
-    maxHeight: 500, 
-    rows: 15, // Aantal rijen dat per pagina getoond wordt
-    
-     columns: ["datum", "tijd","actie","locatie","url"], 
-    
-    header: {
-      // Optioneel: Geef hier je SQL-kolomnamen een mooie Nederlandse naam in de weergave
-      datum: "Datum",
-      tijd: "Tijd",
-      actie: "Actie",
-      locatie: "Locatie",
-      url: "URL"
-    },
-    
-  });
+  return Inputs.table(processedPlanning, {
+  columns: ["dateDisplay", "tijd", "actie","locatie","url"], // Pas 'activity' aan naar jouw kolomnaam
+  header: { dateDisplay: "Datum", 
+            tijd: "Tijd",
+            actie: "Activiteit",
+            locatie: "Plaats",
+            url: "url"},
+  format: {
+    // Deze functie zet de tekst automatisch om in een klikbare link
+    url: (value) => value 
+      ? html`<a href="${value}" target="_blank" style="color: #0066cc; text-decoration: underline;">Open Link</a>` 
+      : ""
+  }
+});
 }
 
 
