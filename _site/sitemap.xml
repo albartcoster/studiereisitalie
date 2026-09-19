@@ -2,11 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://albartcoster.github.io/studiereis_italie/planning.html</loc>
-    <lastmod>2026-09-18T15:53:14.671Z</lastmod>
+    <lastmod>2026-09-18T18:02:29.944Z</lastmod>
   </url>
   <url>
     <loc>https://albartcoster.github.io/studiereis_italie/index.html</loc>
     <lastmod>2026-09-12T20:07:54.713Z</lastmod>
+  </url>
+  <url>
+    <loc>https://albartcoster.github.io/studiereis_italie/bedrijven/cristella.html</loc>
+    <lastmod>2026-09-18T20:03:00.738Z</lastmod>
   </url>
   <url>
     <loc>https://albartcoster.github.io/studiereis_italie/deelnemers.html</loc>
@@ -15,5 +19,9 @@
   <url>
     <loc>https://albartcoster.github.io/studiereis_italie/kaart.html</loc>
     <lastmod>2026-09-13T12:16:31.119Z</lastmod>
+  </url>
+  <url>
+    <loc>https://albartcoster.github.io/studiereis_italie/bedrijven/pieveecoenergia.html</loc>
+    <lastmod>2026-09-18T20:23:09.296Z</lastmod>
   </url>
 </urlset>

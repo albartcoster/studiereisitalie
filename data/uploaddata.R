@@ -10,7 +10,7 @@ library(stringr)
 # 1. Maak een voorbeeld data.frame aan om te uploaden
 bestand <- 'deelnemers.xlsx'
 df <- read_excel(bestand,col_names = FALSE) |> 
-  rename(naam=1,
+  dplyr::rename(naam=1,
          achternaam = 2,
          email = 3,
          telefoonnummer = 4) |> 

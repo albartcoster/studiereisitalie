@@ -90,7 +90,8 @@ processedPlanning = {
     url: (value) => value 
       ? html`<a href="${value}" target="_blank" style="color: #0066cc; text-decoration: underline;">Open Link</a>` 
       : ""
-  }
+  },
+  width: "auto" 
 });
 }
 

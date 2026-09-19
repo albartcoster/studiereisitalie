@@ -27,7 +27,7 @@ website:
 
     style: "docked"
     search: false
-    collapse-level: 1
+    collapse-level: 2
     contents:
       - href: index.qmd
         text: Welkom/Bienvenida
@@ -37,7 +37,16 @@ website:
         text: Kaart van reis
       - href: deelnemers.qmd
         text: Lijst deelnemers
-
+      - text: Bedrijven
+        contents:
+          - href: bedrijven/cristella.qmd
+            text: Cristella
+          - href: bedrijven/pieveecoenergia.qmd
+            text: Pieve Ecoenergia
+          
+          
+        
+            
 format:
   html:
     code-copy: true
