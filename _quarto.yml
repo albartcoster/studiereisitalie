@@ -43,6 +43,9 @@ website:
             text: Cristella
           - href: bedrijven/pieveecoenergia.qmd
             text: Pieve Ecoenergia
+      - href: milaan.qmd
+        text: De stad Milaan
+      
           
           
         

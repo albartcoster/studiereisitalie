@@ -7,9 +7,8 @@ library(stringr)
 
 ## session pooler ingesteld op supabase omdat wij IPv4 internet hebben en niet IPv6
 
-# 1. Maak een voorbeeld data.frame aan om te uploaden
 bestand <- 'deelnemers.xlsx'
-df <- read_excel(bestand,col_names = FALSE) |> 
+deelnemers <- read_excel(bestand,col_names = TRUE) |> 
   dplyr::rename(naam=1,
          achternaam = 2,
          email = 3,
@@ -17,7 +16,13 @@ df <- read_excel(bestand,col_names = FALSE) |>
   mutate(telefoonnummer = str_replace_all(telefoonnummer,"^\\+","")) |> 
   mutate(telefoonnummer = str_replace_all(telefoonnummer,"^00","")) |> 
   mutate(telefoonnummer = str_replace_all(telefoonnummer,"\\s+","")) |> 
-  mutate(telefoonnummer = paste0("+",telefoonnummer))
+  mutate(telefoonnummer = paste0("+",telefoonnummer)) |> 
+  mutate(email = tolower(email))
+
+bestand <- 'planning.xlsx'
+planning <- read_excel(bestand,col_names = TRUE) |> 
+  mutate(datum = as.Date(datum),
+         tijd = format(tijd,"%H:%M"))
 
 
 load_dot_env(".env")
@@ -47,47 +52,59 @@ con <- dbConnect(
   sslmode = "require" 
 )
 
-
-dbWriteTable(con, name = "temp_upload", value = df, row.names = FALSE, overwrite = TRUE)
-
-# 2. Voer de UPSERT uit op basis van het conflict op (naam, achternaam)
-# Let op: de automatische 'id' kolom laten we weg bij het invoegen, die genereert Supabase zelf voor nieuwe rijen.
-upsert_query <- "
+dbWithTransaction(con, {
+  dbWriteTable(con, name = "temp_upload1", value = deelnemers, row.names = FALSE, overwrite = TRUE)
+  
+  # Step A: Delete rows where the composite key (naam, achternaam) is missing in source
+  delete_query1 <- "
+    DELETE FROM deelnemers
+    WHERE NOT EXISTS (
+        SELECT 1 
+        FROM temp_upload1
+        WHERE temp_upload1.naam = deelnemers.naam
+          AND temp_upload1.achternaam = deelnemers.achternaam
+    );"
+  rows_deleted1 <- dbExecute(con, delete_query1)
+  
+  upsert_query1 <- "
   INSERT INTO deelnemers (naam, achternaam, telefoonnummer,email)
-  SELECT naam, achternaam, telefoonnummer,email FROM temp_upload
+  SELECT naam, achternaam, telefoonnummer,email
+  FROM temp_upload1
   ON CONFLICT (naam, achternaam) 
   DO UPDATE SET 
     telefoonnummer = EXCLUDED.telefoonnummer,
     email = EXCLUDED.email
-    ;
-"
-dbExecute(con, upsert_query)
-dbExecute(con, "DROP TABLE temp_upload;")
-
-# 1. Maak een voorbeeld data.frame aan om te uploaden
-bestand <- 'planning.xlsx'
-df <- read_excel(bestand,col_names = TRUE) 
+    ;"
+  rows_upserted1 <- dbExecute(con, upsert_query1)
+  dbExecute(con, "DROP TABLE temp_upload1;")
   
-dbWriteTable(con, name = "temp_upload", value = df, row.names = FALSE, overwrite = TRUE)
-
-# 2. Voer de UPSERT uit op basis van het conflict op (naam, achternaam)
-# Let op: de automatische 'id' kolom laten we weg bij het invoegen, die genereert Supabase zelf voor nieuwe rijen.
-upsert_query <- "
+  dbWriteTable(con, name = "temp_upload2", value = planning, row.names = FALSE, overwrite = TRUE)
+  
+  delete_query2 <- "
+    DELETE FROM planning
+    WHERE NOT EXISTS (
+        SELECT 1 
+        FROM temp_upload2
+        WHERE temp_upload2.datum = planning.datum
+          AND temp_upload2.tijd::TIME = planning.tijd
+    );"
+  rows_deleted2 <- dbExecute(con, delete_query2)
+  
+  upsert_query2 <- "
   INSERT INTO planning (datum, tijd, actie,locatie,url)
-  SELECT datum, tijd, actie,locatie,url FROM temp_upload
+  SELECT datum, tijd::TIME, actie,locatie,url FROM temp_upload2
   ON CONFLICT (datum,tijd) 
   DO UPDATE SET 
     actie = EXCLUDED.actie,
     locatie = EXCLUDED.locatie,
     url = EXCLUDED.url
-    ;
-"
-dbExecute(con, upsert_query)
-
-
-
+    ;"
+  rows_upserted2 <- dbExecute(con, upsert_query2)
+  
+  dbExecute(con, "DROP TABLE temp_upload2;")
+  
+})
 
 # 3. Ruim de tijdelijke tabel op
-dbExecute(con, "DROP TABLE temp_upload;")
 dbDisconnect(con)
 rm(con)
