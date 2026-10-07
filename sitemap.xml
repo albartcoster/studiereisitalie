@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://albartcoster.github.io/studiereis_italie/bedrijven/pieveecoenergia.html</loc>
-    <lastmod>2026-09-19T19:59:14.895Z</lastmod>
-  </url>
-  <url>
-    <loc>https://albartcoster.github.io/studiereis_italie/planning.html</loc>
-    <lastmod>2026-09-19T19:59:14.917Z</lastmod>
-  </url>
-  <url>
-    <loc>https://albartcoster.github.io/studiereis_italie/deelnemers.html</loc>
-    <lastmod>2026-09-19T19:59:14.896Z</lastmod>
+    <loc>https://albartcoster.github.io/studiereis_italie/kaart.html</loc>
+    <lastmod>2026-10-07T19:56:15.342Z</lastmod>
   </url>
   <url>
     <loc>https://albartcoster.github.io/studiereis_italie/index.html</loc>
-    <lastmod>2026-09-19T19:59:14.916Z</lastmod>
-  </url>
-  <url>
-    <loc>https://albartcoster.github.io/studiereis_italie/kaart.html</loc>
-    <lastmod>2026-09-19T19:59:14.916Z</lastmod>
+    <lastmod>2026-10-07T19:56:15.342Z</lastmod>
   </url>
   <url>
     <loc>https://albartcoster.github.io/studiereis_italie/bedrijven/cristella.html</loc>
-    <lastmod>2026-09-19T19:59:14.894Z</lastmod>
+    <lastmod>2026-10-07T19:56:15.319Z</lastmod>
+  </url>
+  <url>
+    <loc>https://albartcoster.github.io/studiereis_italie/milaan.html</loc>
+    <lastmod>2026-10-07T19:56:15.342Z</lastmod>
+  </url>
+  <url>
+    <loc>https://albartcoster.github.io/studiereis_italie/bedrijven/pieveecoenergia.html</loc>
+    <lastmod>2026-10-07T19:56:15.320Z</lastmod>
+  </url>
+  <url>
+    <loc>https://albartcoster.github.io/studiereis_italie/deelnemers.html</loc>
+    <lastmod>2026-10-07T19:56:15.320Z</lastmod>
+  </url>
+  <url>
+    <loc>https://albartcoster.github.io/studiereis_italie/planning.html</loc>
+    <lastmod>2026-10-07T19:56:15.342Z</lastmod>
   </url>
 </urlset>
