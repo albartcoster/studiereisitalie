@@ -1,0 +1,4 @@
+.reveal h2 {
+  font-size: 1.4em;
+  margin-bottom: 0.8em;
+}

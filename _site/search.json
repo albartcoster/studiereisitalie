@@ -1,5 +1,58 @@
 [
   {
+    "objectID": "presentaties/presentatie_mha.html#inzet-van-mha",
+    "href": "presentaties/presentatie_mha.html#inzet-van-mha",
+    "title": "presentatie_mha",
+    "section": "Inzet van MHA",
+    "text": "Inzet van MHA"
+  },
+  {
+    "objectID": "presentaties/presentatie_mha.html#wat-is-mha",
+    "href": "presentaties/presentatie_mha.html#wat-is-mha",
+    "title": "presentatie_mha",
+    "section": "Wat is MHA",
+    "text": "Wat is MHA"
+  },
+  {
+    "objectID": "presentaties/presentatie_mha.html#waarom-mha",
+    "href": "presentaties/presentatie_mha.html#waarom-mha",
+    "title": "presentatie_mha",
+    "section": "Waarom MHA",
+    "text": "Waarom MHA"
+  },
+  {
+    "objectID": "presentaties/presentatie_mha.html#wat-doet-het",
+    "href": "presentaties/presentatie_mha.html#wat-doet-het",
+    "title": "presentatie_mha",
+    "section": "Wat doet het",
+    "text": "Wat doet het\n\nDVMeth\nTegengaan van biohdrogenatie in pens"
+  },
+  {
+    "objectID": "presentaties/presentatie_mha.html#gevolgen",
+    "href": "presentaties/presentatie_mha.html#gevolgen",
+    "title": "presentatie_mha",
+    "section": "Gevolgen",
+    "text": "Gevolgen\n\nWeerstand\nProducie\nmelkvetgehalte"
+  },
+  {
+    "objectID": "presentaties/presentatie_mha.html#economie",
+    "href": "presentaties/presentatie_mha.html#economie",
+    "title": "presentatie_mha",
+    "section": "Economie",
+    "text": "Economie"
+  },
+  {
+    "objectID": "presentaties/mha.html",
+    "href": "presentaties/mha.html",
+    "title": "mha",
+    "section": "",
+    "text": "Open full screen",
+    "crumbs": [
+      "Presentaties",
+      "Inzet van MHA"
+    ]
+  },
+  {
     "objectID": "planning.html",
     "href": "planning.html",
     "title": "Planning en contactgegevens",
@@ -61,16 +114,6 @@
     ]
   },
   {
-    "objectID": "index.html#Bienvenido",
-    "href": "index.html#Bienvenido",
-    "title": "Studiereis naar Italië, 27-30 oktober 2026",
-    "section": "Bienvenido",
-    "text": "Bienvenido\nBienvenidos a este viaje a Italia. En esta pagina encuentra la lista de contactos y el plánning del viaje.",
-    "crumbs": [
-      "Welkom/Bienvenida"
-    ]
-  },
-  {
     "objectID": "milaan.html",
     "href": "milaan.html",
     "title": "Milaan",
@@ -79,5 +122,58 @@
     "crumbs": [
       "De stad Milaan"
     ]
+  },
+  {
+    "objectID": "presentaties/hittestress.html",
+    "href": "presentaties/hittestress.html",
+    "title": "Hittestress",
+    "section": "",
+    "text": "Open full screen",
+    "crumbs": [
+      "Presentaties",
+      "Hittestress"
+    ]
+  },
+  {
+    "objectID": "presentaties/presentatie_hittestress.html#hittestress",
+    "href": "presentaties/presentatie_hittestress.html#hittestress",
+    "title": "Hittestress",
+    "section": "Hittestress",
+    "text": "Hittestress"
+  },
+  {
+    "objectID": "presentaties/presentatie_hittestress.html#wanneer-hittestress",
+    "href": "presentaties/presentatie_hittestress.html#wanneer-hittestress",
+    "title": "Hittestress",
+    "section": "Wanneer hittestress",
+    "text": "Wanneer hittestress"
+  },
+  {
+    "objectID": "presentaties/presentatie_hittestress.html#signalen-van-hittestress",
+    "href": "presentaties/presentatie_hittestress.html#signalen-van-hittestress",
+    "title": "Hittestress",
+    "section": "Signalen van Hittestress",
+    "text": "Signalen van Hittestress"
+  },
+  {
+    "objectID": "presentaties/presentatie_hittestress.html#gevolgen-van-hittestress",
+    "href": "presentaties/presentatie_hittestress.html#gevolgen-van-hittestress",
+    "title": "Hittestress",
+    "section": "Gevolgen van Hittestress",
+    "text": "Gevolgen van Hittestress\n\nProductie: piekproductie, productie tijdens laktatie\nGezondheid koe\nGezondheid en productie kalf\nGezondheid en productie van nakomelingen kalf"
+  },
+  {
+    "objectID": "presentaties/presentatie_hittestress.html#wat-kunnen-we-doen",
+    "href": "presentaties/presentatie_hittestress.html#wat-kunnen-we-doen",
+    "title": "Hittestress",
+    "section": "Wat kunnen we doen",
+    "text": "Wat kunnen we doen\n\nKoelen in laktatie\nKoelen in droogstand\nVoorkomen van instraling zon\nStimuleer opname, voorkom warmteproductie\nAfkalfpatroon\nInzet van producten: capsaícine, betaine, broeremmers, goede kuilen, totaal voorkomen van broei"
+  },
+  {
+    "objectID": "presentaties/presentatie_hittestress.html#verwijzingen",
+    "href": "presentaties/presentatie_hittestress.html#verwijzingen",
+    "title": "Hittestress",
+    "section": "Verwijzingen",
+    "text": "Verwijzingen"
   }
 ]

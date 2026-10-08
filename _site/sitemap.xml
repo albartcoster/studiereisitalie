@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://albartcoster.github.io/studiereis_italie/presentaties/presentatie_mha.html</loc>
+    <lastmod>2026-10-08T19:56:53.490Z</lastmod>
+  </url>
+  <url>
+    <loc>https://albartcoster.github.io/studiereis_italie/presentaties/mha.html</loc>
+    <lastmod>2026-10-08T20:03:36.122Z</lastmod>
+  </url>
+  <url>
     <loc>https://albartcoster.github.io/studiereis_italie/planning.html</loc>
     <lastmod>2026-09-18T18:02:29.944Z</lastmod>
   </url>
@@ -22,10 +30,18 @@
   </url>
   <url>
     <loc>https://albartcoster.github.io/studiereis_italie/index.html</loc>
-    <lastmod>2026-09-12T20:07:54.713Z</lastmod>
+    <lastmod>2026-10-08T19:47:11.624Z</lastmod>
   </url>
   <url>
     <loc>https://albartcoster.github.io/studiereis_italie/milaan.html</loc>
     <lastmod>2026-10-07T19:53:55.035Z</lastmod>
+  </url>
+  <url>
+    <loc>https://albartcoster.github.io/studiereis_italie/presentaties/hittestress.html</loc>
+    <lastmod>2026-10-08T20:03:00.332Z</lastmod>
+  </url>
+  <url>
+    <loc>https://albartcoster.github.io/studiereis_italie/presentaties/presentatie_hittestress.html</loc>
+    <lastmod>2026-10-08T19:55:16.780Z</lastmod>
   </url>
 </urlset>

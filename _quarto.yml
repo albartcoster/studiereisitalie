@@ -45,6 +45,12 @@ website:
             text: Pieve Ecoenergia
       - href: milaan.qmd
         text: De stad Milaan
+      - text: Presentaties
+        contents:
+          - href: presentaties/hittestress.qmd
+            text: Hittestress
+          - href: presentaties/mha.qmd
+            text: Inzet van MHA
       
           
           
