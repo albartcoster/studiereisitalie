@@ -1,6 +1,5 @@
 .Rproj.user
 .Rhistory
-.RData
 .Ruserdata
 .xlsx
 .env
@@ -13,3 +12,8 @@ _site/
 .DS_Store
 
 **/*.quarto_ipynb
+
+# Vertrouwelijke data: niet in de openbare repo
+presentaties/data/
+data/deelnemers.xlsx
+data/mail1.docx
