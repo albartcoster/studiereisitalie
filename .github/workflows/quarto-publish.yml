@@ -1,9 +1,9 @@
 name: Bouw en Publish Quarto Website
 
+# Uitgeschakeld bij push: de site wordt lokaal gerenderd en gepubliceerd met
+# `quarto publish gh-pages`, omdat de R-code in de presentaties lokale data nodig heeft
 on:
-  push:
-    branches: [ main ] # Verander naar master als jouw hoofdtak zo heet
-  workflow_dispatch:   # Hiermee kun je de bouw ook handmatig starten via GitHub
+  workflow_dispatch:   # Alleen nog handmatig te starten via GitHub
 
 # Geef de workflow toestemming om naar GitHub Pages te schrijven
 permissions:
