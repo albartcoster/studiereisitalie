@@ -5,7 +5,31 @@ format: revealjs
 
 ## Hittestress
 
+```{r}
+#| echo: false
+#| results: asis
+
+source('code/maak_carousel.R')
+image_dir <- "beelden/26juni"
+maak_carousel(image_dir,'26juni','26 juni')
+```
+
+
 ## Wanneer hittestress
+
+- Als dier lichaamswarmte niet meer kwijt kan
+- Als temperatuur boven de thermoneutrale zone komt (0-20 °C)
+- Bij hoge luchtvochtigheid
+
+```{r}
+#| echo: false
+#| results: asis
+
+source('code/maak_thi_d3.R')
+maak_thi_d3()
+```
+
+
 
 ## Signalen van Hittestress
 
@@ -15,6 +39,26 @@ format: revealjs
 - Gezondheid koe
 - Gezondheid en productie kalf
 - Gezondheid en productie van nakomelingen kalf
+
+## Productie per bedrijf
+
+```{r}
+#| echo: false
+#| results: asis
+
+source('code/maak_productie_d3.R')
+maak_productie_d3()
+```
+
+## Melkcontrole per bedrijf
+
+```{r}
+#| echo: false
+#| results: asis
+
+source('code/maak_mpr_d3.R')
+maak_mpr_d3()
+```
 
 
 ## Wat kunnen we doen

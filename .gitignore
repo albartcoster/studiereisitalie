@@ -8,6 +8,7 @@
 /.quarto/
 *_cache/
 _site/
+.claude/
 
 .DS_Store
 
