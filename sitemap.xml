@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://albartcoster.github.io/studiereisitalie/presentaties/vitd3.html</loc>
+    <lastmod>2026-10-17T18:19:38.324Z</lastmod>
+  </url>
+  <url>
     <loc>https://albartcoster.github.io/studiereisitalie/presentaties/presentatie_mha.html</loc>
     <lastmod>2026-10-08T19:56:53.490Z</lastmod>
   </url>
@@ -50,10 +54,14 @@
   </url>
   <url>
     <loc>https://albartcoster.github.io/studiereisitalie/presentaties/hittestress.html</loc>
-    <lastmod>2026-10-08T20:03:00.332Z</lastmod>
+    <lastmod>2026-10-17T18:19:44.686Z</lastmod>
   </url>
   <url>
     <loc>https://albartcoster.github.io/studiereisitalie/presentaties/presentatie_hittestress.html</loc>
     <lastmod>2026-10-13T19:18:39.018Z</lastmod>
+  </url>
+  <url>
+    <loc>https://albartcoster.github.io/studiereisitalie/presentaties/vitd3/presentatie_vitd3.html</loc>
+    <lastmod>2026-10-17T15:40:17.941Z</lastmod>
   </url>
 </urlset>

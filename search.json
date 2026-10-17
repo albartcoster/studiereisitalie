@@ -1,5 +1,16 @@
 [
   {
+    "objectID": "presentaties/vitd3.html",
+    "href": "presentaties/vitd3.html",
+    "title": "Vitamine D3",
+    "section": "",
+    "text": "Later vindt u hier de volledige presentatie over Vitamine D3",
+    "crumbs": [
+      "Presentaties",
+      "Vitamine D3"
+    ]
+  },
+  {
     "objectID": "presentaties/presentatie_mha.html#inzet-van-mha",
     "href": "presentaties/presentatie_mha.html#inzet-van-mha",
     "title": "presentatie_mha",
@@ -161,7 +172,7 @@
     "href": "presentaties/hittestress.html",
     "title": "Hittestress",
     "section": "",
-    "text": "Open full screen",
+    "text": "Later vindt u hier de volledige presentatie over Hittestress",
     "crumbs": [
       "Presentaties",
       "Hittestress"
@@ -222,5 +233,96 @@
     "title": "Hittestress",
     "section": "Wat kunnen we doen",
     "text": "Wat kunnen we doen\n\nKoelen in laktatie\nKoelen in droogstand\nVoorkomen van instraling zon\nStimuleer opname, voorkom warmteproductie\nAfkalfpatroon?\nInzet van producten: capsaïcine, betaïne, goede kuilen, totaal voorkomen van broei, broeiremmers"
+  },
+  {
+    "objectID": "presentaties/vitd3/presentatie_vitd3.html#synthese",
+    "href": "presentaties/vitd3/presentatie_vitd3.html#synthese",
+    "title": "Vitamine D",
+    "section": "Synthese",
+    "text": "Synthese\n\n\nBeeld: Muhammed Ziha, 2026\n\n\nHoog fosfor remt de leverenzymen af; laag fosfor in de droogstand helpt bij de vitamine D-synthese."
+  },
+  {
+    "objectID": "presentaties/vitd3/presentatie_vitd3.html#zonlicht-en-aanmaak-van-vitamine-d",
+    "href": "presentaties/vitd3/presentatie_vitd3.html#zonlicht-en-aanmaak-van-vitamine-d",
+    "title": "Vitamine D",
+    "section": "Zonlicht en aanmaak van vitamine D",
+    "text": "Zonlicht en aanmaak van vitamine D\nKoeien uit de stal zonder vitamine D-aanvulling worden geweid met of zonder huidbedekking.\n\n\nBron: Hymøller & Jensen (2010)"
+  },
+  {
+    "objectID": "presentaties/vitd3/presentatie_vitd3.html#synthese-en-toepassing-doelweefsel-in-immuunsysteem",
+    "href": "presentaties/vitd3/presentatie_vitd3.html#synthese-en-toepassing-doelweefsel-in-immuunsysteem",
+    "title": "Vitamine D",
+    "section": "Synthese en toepassing doelweefsel in immuunsysteem",
+    "text": "Synthese en toepassing doelweefsel in immuunsysteem\n\n\nBeeld: Eder & Grundmann (2022)\n\n\n\nMeer dan 2000 genen zijn betrokken bij de vorming van gehydroxyleerd vitamine D.\nUV-straling (zonlicht) is onmisbaar.\nHoe houden we onze koeien?"
+  },
+  {
+    "objectID": "presentaties/vitd3/presentatie_vitd3.html#functie-vitamine-d-enkele-voorbeelden",
+    "href": "presentaties/vitd3/presentatie_vitd3.html#functie-vitamine-d-enkele-voorbeelden",
+    "title": "Vitamine D",
+    "section": "Functie vitamine D – enkele voorbeelden",
+    "text": "Functie vitamine D – enkele voorbeelden\n\nFosfor- en calciumbalans – mobiliseren van Ca en P uit het bot\nOnmisbaar bij verschillende close-up-strategieën tegen melkziekte\nImmuunfunctie (Eder & Grundmann, 2022), zoals:\n\nvorming van antimicrobiële peptiden door 1,25(OH)2D\n→ rol in het beschermen tegen infecties\n→ opruimen van infecties\n\n\n\nEen laag P-niveau helpt bij de omzetting naar 1,25(OH)2D – dat is dus nuttig in de voorbereiding en rond het kalven. Bij een anionisch rantsoen is meer vitamine D nodig dan zonder.\nEr is een omgekeerde correlatie tussen serum-25(OH)D3 en het risico op bovenste-luchtweginfecties, tuberculose en multiple sclerose."
+  },
+  {
+    "objectID": "presentaties/vitd3/presentatie_vitd3.html#rol-van-vitamine-d-bij-afweerreactie-in-epitheelcellen-in-de-uier",
+    "href": "presentaties/vitd3/presentatie_vitd3.html#rol-van-vitamine-d-bij-afweerreactie-in-epitheelcellen-in-de-uier",
+    "title": "Vitamine D",
+    "section": "Rol van vitamine D bij afweerreactie in epitheelcellen in de uier",
+    "text": "Rol van vitamine D bij afweerreactie in epitheelcellen in de uier\n\n\nBeeld: Eder & Grundmann (2022)"
+  },
+  {
+    "objectID": "presentaties/vitd3/presentatie_vitd3.html#lactatiestadium-en-vitamine-d",
+    "href": "presentaties/vitd3/presentatie_vitd3.html#lactatiestadium-en-vitamine-d",
+    "title": "Vitamine D",
+    "section": "Lactatiestadium en vitamine D",
+    "text": "Lactatiestadium en vitamine D\nVitamine D-niveau op 16 verschillende melkveebedrijven in de VS\n\n\nBron: Nelson et al. (2016)"
+  },
+  {
+    "objectID": "presentaties/vitd3/presentatie_vitd3.html#overgewicht-en-vitamine-d-status",
+    "href": "presentaties/vitd3/presentatie_vitd3.html#overgewicht-en-vitamine-d-status",
+    "title": "Vitamine D",
+    "section": "Overgewicht en vitamine D-status",
+    "text": "Overgewicht en vitamine D-status\n\nVimaleswaran et al. (2013): 1 punt hogere BMI verlaagt bloed-vitamine D met 1,15%\nSupplementatie wordt minder effectief bij overgewicht\nTobias et al. (2023): 2000 IE cholecalciferol per dag bij mensen van 50–70 jaar:\n\n→ verbetert gezondheid bij lage BMI\n→ bij BMI &gt; 25 meer kankerincidentie en -sterfte, ondanks supplementatie en verbetering van de bloedwaarden van vitamine D\n\n\n\nTobias: supplementatie bij lage BMI zorgt voor 24% minder kankerincidentie en 42% minder kankersterfte in vergelijking met supplementatie bij hoge BMI, ondanks voldoende serum-vitamine D bij hoge BMI."
+  },
+  {
+    "objectID": "presentaties/vitd3/presentatie_vitd3.html#overgewicht-vermindert-respons-op-cholecalciferol",
+    "href": "presentaties/vitd3/presentatie_vitd3.html#overgewicht-vermindert-respons-op-cholecalciferol",
+    "title": "Vitamine D",
+    "section": "Overgewicht vermindert respons op cholecalciferol",
+    "text": "Overgewicht vermindert respons op cholecalciferol\nHumaan onderzoek: bloedwaarden na 6 maanden 50.000 IE cholecalciferol per maand, bij mensen met beginwaarden &lt; 30 ng/mL.\n\n\nBron: Cominacini et al. (2023)"
+  },
+  {
+    "objectID": "presentaties/vitd3/presentatie_vitd3.html#supplementatie-cholecalciferol-of-calcifediol",
+    "href": "presentaties/vitd3/presentatie_vitd3.html#supplementatie-cholecalciferol-of-calcifediol",
+    "title": "Vitamine D",
+    "section": "Supplementatie: cholecalciferol of calcifediol?",
+    "text": "Supplementatie: cholecalciferol of calcifediol?\n\n\nCholecalciferol is het meest gangbaar →\nDe lever hydroxyleert cholecalciferol naar 25-hydroxycholecalciferol (calcifediol) →\n\n\n\n\nBeeld: Muhammed Ziha, 2026"
+  },
+  {
+    "objectID": "presentaties/vitd3/presentatie_vitd3.html#hydroxy-vitamine-d-in-de-transitie-i.p.v.-cholecalciferol-d3",
+    "href": "presentaties/vitd3/presentatie_vitd3.html#hydroxy-vitamine-d-in-de-transitie-i.p.v.-cholecalciferol-d3",
+    "title": "Vitamine D",
+    "section": "Hydroxy-vitamine D in de transitie i.p.v. cholecalciferol (D3)",
+    "text": "Hydroxy-vitamine D in de transitie i.p.v. cholecalciferol (D3)\n\n\n\n\n\nHoger bloedcalcium bij kalven (Jensen et al., 2026)\nMinder mastitis na kalven (trend)\nHogere colostrumgift, hoger IgG en hogere melkgift bij BCS 3,5 (Silva et al., 2022)"
+  },
+  {
+    "objectID": "presentaties/vitd3/presentatie_vitd3.html#wordt-de-werking-van-hydroxy-vitamine-d-minder-geremd-bij-hoge-bcs-dan-die-van-cholecalciferol",
+    "href": "presentaties/vitd3/presentatie_vitd3.html#wordt-de-werking-van-hydroxy-vitamine-d-minder-geremd-bij-hoge-bcs-dan-die-van-cholecalciferol",
+    "title": "Vitamine D",
+    "section": "Wordt de werking van hydroxy-vitamine D minder geremd bij hoge BCS dan die van cholecalciferol?",
+    "text": "Wordt de werking van hydroxy-vitamine D minder geremd bij hoge BCS dan die van cholecalciferol?\nHumane studies (Pérez-Castrillón et al., 2022):\n\nHydroxy-vitamine D zorgt voor een snellere verhoging van bloed-vitamine D\nOpname wordt veel minder verstoord door obesitas\n\nEffectief bij (chronisch) zieke mensen:\n\nSupplementatie verminderde het aantal IC-opnamedagen en de sterfte door COVID-19 (Nogues et al., 2021)"
+  },
+  {
+    "objectID": "presentaties/vitd3/presentatie_vitd3.html#reactie-op-calcifediol-casestudie-met-één-persoon",
+    "href": "presentaties/vitd3/presentatie_vitd3.html#reactie-op-calcifediol-casestudie-met-één-persoon",
+    "title": "Vitamine D",
+    "section": "Reactie op calcifediol – casestudie met één persoon",
+    "text": "Reactie op calcifediol – casestudie met één persoon\n58-jarige vrouw, BMI 30 en leververvetting\n\n\nBron: Koga et al. (2025)"
+  },
+  {
+    "objectID": "presentaties/vitd3/presentatie_vitd3.html#literatuur",
+    "href": "presentaties/vitd3/presentatie_vitd3.html#literatuur",
+    "title": "Vitamine D",
+    "section": "Literatuur",
+    "text": "Literatuur\n\n\nCominacini, M., Fumaneri, A., Ballerini, L., Braggio, M., Valenti, M. T., & Dalle Carbonare, L. (2023). Unraveling the Connection: Visceral Adipose Tissue and Vitamin D Levels in Obesity. Nutrients, 15(19), 4259. https://doi.org/10.3390/nu15194259\n\n\nEder, K., & Grundmann, S. M. (2022). Vitamin D in dairy cows: metabolism, status and functions in the immune system. Archives of Animal Nutrition, 76(1), 1-33. https://doi.org/10.1080/1745039X.2021.2017747\n\n\nHymøller, L., & Jensen, S. K. (2010). Vitamin D3 synthesis in the entire skin surface of dairy cows despite hair coverage. Journal of Dairy Science, 93(5), 2025-2029. https://doi.org/10.3168/jds.2009-2991\n\n\nJensen, S. K., Kristensen, N. B., Turner, T. D., Larsen, M., & Lashkari, S. (2026). Effect of 25-OH-cholecalciferol on mineral metabolism of Holstein cows during the transition period. Journal of Dairy Science, 109(6), 6114-6126. https://doi.org/10.3168/jds.2025-27196\n\n\nKoga, G. K. C., Maeda, S. S., & Lazaretti-Castro, M. (2025). Rapid and dose-dependent increase of 25(OH)D levels after calcifediol supplementation in a woman with obesity, chronic liver disease, and osteoporosis. Archives of Endocrinology and Metabolism, 69(6), 1-6. https://doi.org/10.20945/2359-4292-2024-0428\n\n\nNelson, C. D., Lippolis, J. D., Reinhardt, T. A., Sacco, R. E., Powell, J. L., Drewnoski, M. E., O’Neil, M., Beitz, D. C., & Weiss, W. P. (2016). Vitamin D status of dairy cattle: Outcomes of current practices in the dairy industry. Journal of Dairy Science, 99(12), 10150-10160. https://doi.org/10.3168/jds.2016-11727\n\n\nNogues, X., Ovejero, D., Pineda-Moncusí, M., Bouillon, R., Arenas, D., Pascual, J., Ribes, A., Guerri-Fernandez, R., Villar-Garcia, J., Rial, A., Gimenez-Argente, C., Cos, M. L., Rodriguez-Morera, J., Campodarve, I., Quesada-Gomez, J. M., & Garcia-Giralt, N. (2021). Calcifediol Treatment and COVID-19–Related Outcomes. The Journal of Clinical Endocrinology & Metabolism, 106(10), e4017-e4027. https://doi.org/10.1210/clinem/dgab405\n\n\nPérez-Castrillón, J. L., Usategui-Martín, R., & Pludowski, P. (2022). Treatment of Vitamin D Deficiency with Calcifediol: Efficacy and Safety Profile and Predictability of Efficacy. Nutrients, 14(9), 1943. https://doi.org/10.3390/nu14091943\n\n\nSilva, A. S., Cortinhas, C. S., Acedo, T. S., Morenz, M. J. F., Lopes, F. C. F., Arrigoni, M. B., Ferreira, M. H., Jaguaribe, T. L., Ferreira, L. D., Gouvêa, V. N., & Pereira, L. G. R. (2022). Effects of feeding 25-hydroxyvitamin D3 with an acidogenic diet during the prepartum period in dairy cows: Mineral metabolism, energy balance, and lactation performance of Holstein dairy cows. Journal of Dairy Science, 105(7), 5796-5812. https://doi.org/10.3168/jds.2021-21727\n\n\nTobias, D. K., Luttmann-Gibson, H., Mora, S., Danik, J., Bubes, V., Copeland, T., LeBoff, M. S., Cook, N. R., Lee, I.-M., Buring, J. E., & Manson, J. E. (2023). Association of Body Weight With Response to Vitamin D Supplementation and Metabolism. JAMA Network Open, 6(1), e2250681. https://doi.org/10.1001/jamanetworkopen.2022.50681\n\n\nVimaleswaran, K. S., Berry, D. J., Lu, C., Tikkanen, E., Pilz, S., Hiraki, L. T., Cooper, J. D., Dastani, Z., Li, R., Houston, D. K., Wood, A. R., Michaëlsson, K., Yerges-Armstrong, L. M., McCarthy, M. I., Vandenput, L., Zgaga, L., Kaakinen, M., Kleber, M. E., Jameson, K., et al.others. (2013). Causal Relationship between Obesity and Vitamin D Status: Bi-Directional Mendelian Randomization Analysis of Multiple Cohorts. PLOS Medicine, 10(2), e1001383. https://doi.org/10.1371/journal.pmed.1001383"
   }
 ]

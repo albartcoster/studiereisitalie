@@ -1,0 +1,28 @@
+/* Bronvermelding rechtsonder op een dia */
+.reveal .bron {
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  font-size: 0.45em;
+  color: #666;
+}
+
+/* Lange titel iets kleiner */
+.reveal .smaller-title h2 {
+  font-size: 1.3em;
+}
+
+.reveal .v-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 600px;
+}
+
+/* Literatuurlijst compact en leesbaar */
+.reveal #refs .csl-entry {
+  font-size: 0.8em;
+  margin-bottom: 0.5em;
+  padding-left: 1.5em;
+  text-indent: -1.5em;
+}
