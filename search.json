@@ -183,7 +183,11 @@
     "href": "presentaties/ligboxen.html",
     "title": "Ligboxen",
     "section": "",
-    "text": "Later vindt u hier de gehele presentatie over ligboxen"
+    "text": "Later vindt u hier de gehele presentatie over ligboxen",
+    "crumbs": [
+      "Presentaties",
+      "Ligboxen"
+    ]
   },
   {
     "objectID": "presentaties/presentatie_hittestress.html#hittestress",
