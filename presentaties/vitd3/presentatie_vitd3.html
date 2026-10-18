@@ -304,6 +304,9 @@
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><img data-src="images/hyd-transitie.png" style="width:100.0%" alt="Plasma 25(OH)D3 rond het kalven bij koeien met D3 versus HyD: met HyD stijgt het niveau tot ruim 100 ng/mL, met D3 blijft het rond 40 ng/mL."></p>
+<div class="bron">
+<p>Bron: <span class="citation" data-cites="jensen2026">Jensen et al. (<a href="#/literatuur" role="doc-biblioref" onclick="">2026</a>)</span></p>
+</div>
 </div><div class="column" style="width:45%;">
 <ul>
 <li>Hoger bloedcalcium bij kalven <span class="citation" data-cites="jensen2026">(<a href="#/literatuur" role="doc-biblioref" onclick="">Jensen et al., 2026</a>)</span></li>
@@ -586,6 +589,14 @@ Tobias, D. K., Luttmann-Gibson, H., Mora, S., Danik, J., Bubes, V., Copeland, T.
           RevealZoom
         ]
       });
+    </script>
+    <script>
+      // Quarto geeft scrollActivationWidth alleen door als scroll-weergave altijd aan staat,
+      // dus zet het hier op 0: ook op mobiel gewone (geschaalde) dia's tonen
+      (function () {
+        var zetUit = function () { Reveal.configure({ scrollActivationWidth: 0 }); };
+        if (Reveal.isReady()) zetUit(); else Reveal.on('ready', zetUit);
+      })();
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
