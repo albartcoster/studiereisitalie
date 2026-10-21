@@ -1,0 +1,5 @@
+/* Fotodia's: beelden vullen hun vak zonder vervorming */
+.reveal .slides section img.absolute {
+  object-fit: cover;
+  margin: 0;
+}
