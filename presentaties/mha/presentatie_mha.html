@@ -792,6 +792,32 @@ Zhou, Z., Bulgari, O., Vailati-Riboni, M., Trevisi, E., Ballou, M. A., Cardoso, 
         ]
       });
     </script>
+    <style>
+      .slide-menu-panel li.terug-naar-site a {
+        display: block;
+        font-weight: bold;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 0.6em;
+        margin-bottom: 0.4em;
+      }
+    </style>
+    <script>
+      // Zet bovenaan het zijmenu (links) een link terug naar de hoofdpagina van de site.
+      // Alle presentaties staan in presentaties/<map>/, dus de hoofdpagina is ../../index.html
+      (function () {
+        var voegToe = function () {
+          document.querySelectorAll('.slide-menu-panel > .slide-menu-items').forEach(function (lijst) {
+            if (lijst.querySelector('.terug-naar-site')) return;
+            var li = document.createElement('li');
+            li.className = 'terug-naar-site';
+            li.innerHTML = '<a href="../../index.html" target="_self">&larr; Terug naar de website</a>';
+            lijst.insertBefore(li, lijst.firstChild);
+          });
+        };
+        if (document.querySelector('.slide-menu-panel')) voegToe();
+        document.addEventListener('menu-ready', voegToe);
+      })();
+    </script>
     
 
     <script>
