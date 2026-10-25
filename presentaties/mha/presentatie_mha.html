@@ -298,7 +298,7 @@ Albart Coster
       teken();
     });
 
-  const maak_dubbele_regelaar = (label, min, max, opmaak) => {
+  const maak_dubbele_regelaar = (label, min, max, opmaak, start = [min, max]) => {
     const blok = bediening.append("div").style("white-space", "nowrap");
     blok.append("span").text(label + " ").style("margin-right", "0.4em");
     const regelaar = blok.append("div").attr("class", "dubbel");
@@ -307,8 +307,8 @@ Albart Coster
     const maak_invoer = (waarde, naam) => regelaar.append("input")
       .attr("type", "range").attr("min", min).attr("max", max).attr("step", 1)
       .attr("aria-label", label + " " + naam).property("value", waarde);
-    const van = maak_invoer(min, "minimum");
-    const tot = maak_invoer(max, "maximum");
+    const van = maak_invoer(start[0], "minimum");
+    const tot = maak_invoer(start[1], "maximum");
     const getal = blok.append("strong").style("margin-left", "0.5em").style("display", "inline-block").style("min-width", "5.5em");
 
     const lees = () => [+van.property("value"), +tot.property("value")];
@@ -329,7 +329,12 @@ Albart Coster
   const lac_label = l => l >= inst.lactatie_max ? inst.lactatie_max + "+" : String(l);
   const lac_tekst = (a, b) => a === b ? lac_label(a) : `${lac_label(a)} – ${lac_label(b)}`;
 
-  const dim_regelaar = maak_dubbele_regelaar("DIM", 0, max_klasse, dim_tekst);
+  // Beginstand in dagen naar klassen; bovengrens exclusief, dus 10 – 100 d = klasse 1 t/m 9
+  const dim_start = inst.dim_start
+    ? [Math.floor(inst.dim_start[0] / inst.dim_klasse),
+       Math.min(max_klasse, Math.ceil(inst.dim_start[1] / inst.dim_klasse) - 1)]
+    : [0, max_klasse];
+  const dim_regelaar = maak_dubbele_regelaar("DIM", 0, max_klasse, dim_tekst, dim_start);
   const lac_regelaar = maak_dubbele_regelaar("Lactatie", 1, inst.lactatie_max, lac_tekst);
 
   // Smoother: bandbreedte (sigma) van de Gaussische kernel in dagen, 0 = uit
