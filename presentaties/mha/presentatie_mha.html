@@ -265,6 +265,8 @@ Albart Coster
 
   // ---- Bediening: kenmerk, schuifregelaars en smoother in één rij boven de grafiek ----
   const bediening = root.append("div")
+    // Reveal.js: vegen over de regelaars mag niet naar een andere dia springen
+    .attr("data-prevent-swipe", "")
     .style("display", "flex").style("flex-wrap", "wrap")
     .style("gap", "0.4em 1.5em").style("justify-content", "center").style("align-items", "center")
     .style("font-size", "0.42em").style("margin-bottom", "0.3em");
@@ -283,10 +285,21 @@ Albart Coster
       -webkit-appearance: none; appearance: none; background: none; pointer-events: none; }
     #mpr-d3 .dubbel input::-webkit-slider-runnable-track { background: none; height: 20px; }
     #mpr-d3 .dubbel input::-moz-range-track { background: none; }
-    #mpr-d3 .dubbel input::-webkit-slider-thumb { -webkit-appearance: none; pointer-events: auto; cursor: pointer;
+    #mpr-d3 .dubbel input::-webkit-slider-thumb { -webkit-appearance: none; pointer-events: none;
       width: 16px; height: 16px; margin-top: 2px; border-radius: 50%; background: #2a78d6; border: 2px solid #fcfcfb; box-shadow: 0 0 0 1px #2a78d6; }
-    #mpr-d3 .dubbel input::-moz-range-thumb { pointer-events: auto; cursor: pointer;
+    #mpr-d3 .dubbel input::-moz-range-thumb { pointer-events: none;
       width: 12px; height: 12px; border-radius: 50%; background: #2a78d6; border: 2px solid #fcfcfb; box-shadow: 0 0 0 1px #2a78d6; }
+    #mpr-d3 input[type=range] { touch-action: none; }
+    /* Touchscreen: Reveal schaalt de dia sterk omlaag, dus grotere knoppen en een groter raakvlak */
+    @media (pointer: coarse) {
+      #mpr-d3 input[type=range] { height: 40px; }
+      #mpr-d3 .dubbel { width: 220px; height: 40px; }
+      #mpr-d3 .dubbel .spoor, #mpr-d3 .dubbel .bereik { top: 18px; }
+      #mpr-d3 .dubbel input { height: 40px; }
+      #mpr-d3 .dubbel input::-webkit-slider-runnable-track { height: 40px; }
+      #mpr-d3 .dubbel input::-webkit-slider-thumb { width: 32px; height: 32px; margin-top: 4px; }
+      #mpr-d3 .dubbel input::-moz-range-thumb { width: 28px; height: 28px; }
+    }
   `);
 
   const keuze = bediening.append("div").attr("class", "keuze").attr("role", "group").attr("aria-label", "Kenmerk");
@@ -297,6 +310,37 @@ Albart Coster
       bereken_reeksen();
       teken();
     });
+
+  // Slepen zelf afhandelen met pointer events in plaats van de knoppen van de range-inputs:
+  // iOS Safari sleept de knoppen van gestapelde inputs (en in een geschaalde Reveal-dia) niet betrouwbaar.
+  // getBoundingClientRect houdt rekening met de schaal van Reveal; de inputs blijven voor het toetsenbord.
+  const sleepbaar = (houder, invoer) => {
+    const [min, max, stap] = ["min", "max", "step"].map(a => +invoer[0].attr(a));
+    let actief = null;
+    const waarde_bij = event => {
+      const r = houder.node().getBoundingClientRect();
+      const fractie = Math.min(1, Math.max(0, (event.clientX - r.left) / r.width));
+      return min + Math.round(fractie * (max - min) / stap) * stap;
+    };
+    const zet = (inv, w) => {
+      if (+inv.property("value") === w) return;
+      inv.property("value", w);
+      inv.node().dispatchEvent(new Event("input", { bubbles: true }));
+    };
+    houder.style("touch-action", "none").style("cursor", "pointer")
+      .on("pointerdown.sleep", event => {
+        event.preventDefault();
+        const w = waarde_bij(event);
+        // Dichtstbijzijnde knop; liggen ze op elkaar, dan de knop aan de kant waar getikt wordt
+        const [a, b] = invoer.map(inv => Math.abs(+inv.property("value") - w));
+        actief = invoer.length === 1 || a < b || (a === b && w < +invoer[0].property("value")) ? invoer[0] : invoer[1];
+        houder.node().setPointerCapture(event.pointerId);
+        zet(actief, w);
+      })
+      .on("pointermove.sleep", event => { if (actief) zet(actief, waarde_bij(event)); })
+      .on("pointerup.sleep pointercancel.sleep", () => { actief = null; });
+    for (const inv of invoer) inv.style("pointer-events", "none");
+  };
 
   const maak_dubbele_regelaar = (label, min, max, opmaak, start = [min, max]) => {
     const blok = bediening.append("div").style("white-space", "nowrap");
@@ -309,6 +353,7 @@ Albart Coster
       .attr("aria-label", label + " " + naam).property("value", waarde);
     const van = maak_invoer(start[0], "minimum");
     const tot = maak_invoer(start[1], "maximum");
+    sleepbaar(regelaar, [van, tot]);
     const getal = blok.append("strong").style("margin-left", "0.5em").style("display", "inline-block").style("min-width", "5.5em");
 
     const lees = () => [+van.property("value"), +tot.property("value")];
@@ -340,15 +385,22 @@ Albart Coster
   // Smoother: bandbreedte (sigma) van de Gaussische kernel in dagen, 0 = uit
   const smoother_blok = bediening.append("div").style("white-space", "nowrap");
   smoother_blok.append("span").text("Smoother ").style("margin-right", "0.4em");
-  const smoother_invoer = smoother_blok.append("input")
+  // Zelfde opmaak als de dubbele regelaars, maar met één knop
+  const smoother_houder = smoother_blok.append("div").attr("class", "dubbel");
+  smoother_houder.append("div").attr("class", "spoor");
+  const smoother_bereik = smoother_houder.append("div").attr("class", "bereik").style("left", "0");
+  const smoother_invoer = smoother_houder.append("input")
     .attr("type", "range").attr("min", 0).attr("max", 120).attr("step", 5)
     .attr("aria-label", "Smoother bandbreedte in dagen")
-    .style("width", "110px").style("vertical-align", "middle").style("accent-color", "#2a78d6")
     .property("value", inst.smoother_dagen);
+  sleepbaar(smoother_houder, [smoother_invoer]);
   const smoother_getal = smoother_blok.append("strong").style("margin-left", "0.5em")
     .style("display", "inline-block").style("min-width", "3.5em");
   const smoother_sigma = () => +smoother_invoer.property("value");
-  const toon_smoother = () => smoother_getal.text(smoother_sigma() === 0 ? "uit" : smoother_sigma() + " d");
+  const toon_smoother = () => {
+    smoother_bereik.style("width", smoother_sigma() / +smoother_invoer.attr("max") * 100 + "%");
+    smoother_getal.text(smoother_sigma() === 0 ? "uit" : smoother_sigma() + " d");
+  };
   toon_smoother();
 
   // ---- Legenda: klik om een bedrijf aan/uit te zetten ----

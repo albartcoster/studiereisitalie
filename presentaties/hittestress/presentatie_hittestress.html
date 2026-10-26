@@ -467,17 +467,22 @@ Albart Coster
   // Smoother: bandbreedte (sigma) van de Gaussische kernel in dagen, 0 = uit
   const smoother_blok = bediening.append("div").style("white-space", "nowrap");
   smoother_blok.append("span").text("Smoother ").style("margin-right", "0.4em");
-  const smoother_houder = smoother_blok.append("span").style("display", "inline-block").style("vertical-align", "middle");
+  // Zelfde opmaak als de dubbele regelaars, maar met één knop
+  const smoother_houder = smoother_blok.append("div").attr("class", "dubbel");
+  smoother_houder.append("div").attr("class", "spoor");
+  const smoother_bereik = smoother_houder.append("div").attr("class", "bereik").style("left", "0");
   const smoother_invoer = smoother_houder.append("input")
     .attr("type", "range").attr("min", 0).attr("max", 60).attr("step", 1)
     .attr("aria-label", "Smoother bandbreedte in dagen")
-    .style("width", "120px").style("vertical-align", "middle").style("accent-color", "#2a78d6")
     .property("value", inst.smoother_dagen);
   sleepbaar(smoother_houder, [smoother_invoer]);
   const smoother_getal = smoother_blok.append("strong").style("margin-left", "0.5em")
     .style("display", "inline-block").style("min-width", "3.5em");
   const smoother_sigma = () => +smoother_invoer.property("value");
-  const toon_smoother = () => smoother_getal.text(smoother_sigma() === 0 ? "uit" : smoother_sigma() + " d");
+  const toon_smoother = () => {
+    smoother_bereik.style("width", smoother_sigma() / +smoother_invoer.attr("max") * 100 + "%");
+    smoother_getal.text(smoother_sigma() === 0 ? "uit" : smoother_sigma() + " d");
+  };
   toon_smoother();
 
   // ---- Legenda: klik om een bedrijf aan/uit te zetten ----
@@ -825,17 +830,22 @@ Albart Coster
   // Smoother: bandbreedte (sigma) van de Gaussische kernel in maanden, 0 = uit
   const smoother_blok = bediening.append("div").style("white-space", "nowrap");
   smoother_blok.append("span").text("Smoother ").style("margin-right", "0.4em");
-  const smoother_houder = smoother_blok.append("span").style("display", "inline-block").style("vertical-align", "middle");
+  // Zelfde opmaak als de dubbele regelaars, maar met één knop
+  const smoother_houder = smoother_blok.append("div").attr("class", "dubbel");
+  smoother_houder.append("div").attr("class", "spoor");
+  const smoother_bereik = smoother_houder.append("div").attr("class", "bereik").style("left", "0");
   const smoother_invoer = smoother_houder.append("input")
     .attr("type", "range").attr("min", 0).attr("max", 12).attr("step", 1)
     .attr("aria-label", "Smoother bandbreedte in maanden")
-    .style("width", "120px").style("vertical-align", "middle").style("accent-color", "#2a78d6")
     .property("value", inst.smoother_maanden);
   sleepbaar(smoother_houder, [smoother_invoer]);
   const smoother_getal = smoother_blok.append("strong").style("margin-left", "0.5em")
     .style("display", "inline-block").style("min-width", "3.5em");
   const smoother_sigma = () => +smoother_invoer.property("value");
-  const toon_smoother = () => smoother_getal.text(smoother_sigma() === 0 ? "uit" : smoother_sigma() + " mnd");
+  const toon_smoother = () => {
+    smoother_bereik.style("width", smoother_sigma() / +smoother_invoer.attr("max") * 100 + "%");
+    smoother_getal.text(smoother_sigma() === 0 ? "uit" : smoother_sigma() + " mnd");
+  };
   toon_smoother();
 
   // ---- Legenda: klik om een bedrijf aan/uit te zetten ----
@@ -1204,17 +1214,22 @@ Albart Coster
   // Smoother: bandbreedte (sigma) van de Gaussische kernel in dagen, 0 = uit
   const smoother_blok = bediening.append("div").style("white-space", "nowrap");
   smoother_blok.append("span").text("Smoother ").style("margin-right", "0.4em");
-  const smoother_houder = smoother_blok.append("span").style("display", "inline-block").style("vertical-align", "middle");
+  // Zelfde opmaak als de dubbele regelaars, maar met één knop
+  const smoother_houder = smoother_blok.append("div").attr("class", "dubbel");
+  smoother_houder.append("div").attr("class", "spoor");
+  const smoother_bereik = smoother_houder.append("div").attr("class", "bereik").style("left", "0");
   const smoother_invoer = smoother_houder.append("input")
     .attr("type", "range").attr("min", 0).attr("max", 120).attr("step", 5)
     .attr("aria-label", "Smoother bandbreedte in dagen")
-    .style("width", "110px").style("vertical-align", "middle").style("accent-color", "#2a78d6")
     .property("value", inst.smoother_dagen);
   sleepbaar(smoother_houder, [smoother_invoer]);
   const smoother_getal = smoother_blok.append("strong").style("margin-left", "0.5em")
     .style("display", "inline-block").style("min-width", "3.5em");
   const smoother_sigma = () => +smoother_invoer.property("value");
-  const toon_smoother = () => smoother_getal.text(smoother_sigma() === 0 ? "uit" : smoother_sigma() + " d");
+  const toon_smoother = () => {
+    smoother_bereik.style("width", smoother_sigma() / +smoother_invoer.attr("max") * 100 + "%");
+    smoother_getal.text(smoother_sigma() === 0 ? "uit" : smoother_sigma() + " d");
+  };
   toon_smoother();
 
   // ---- Legenda: klik om een bedrijf aan/uit te zetten ----
