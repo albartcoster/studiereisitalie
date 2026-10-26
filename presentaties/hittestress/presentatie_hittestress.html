@@ -308,11 +308,11 @@ Albart Coster
 <section id="beelden-van-hittestress" class="slide level2">
 <h2>Beelden van Hittestress</h2>
 <div id="carousel-26juni" class="r-stack">
-  <video class="fragment fade-out" data-fragment-index="1" src="beelden/26juni/1.mp4" controls="" muted="" playsinline="" style="max-height:500px; max-width:100%;"></video>
-  <video class="fragment fade-in-then-out" data-fragment-index="1" src="beelden/26juni/2.mp4" controls="" muted="" playsinline="" style="max-height:500px; max-width:100%;"></video>
-  <video class="fragment fade-in-then-out" data-fragment-index="2" src="beelden/26juni/3.mp4" controls="" muted="" playsinline="" style="max-height:500px; max-width:100%;"></video>
-  <img class="fragment fade-in-then-out" data-fragment-index="3" src="beelden/26juni/4.jpg" alt="4.jpg" style="max-height:500px; max-width:100%; background:white;">
-  <img class="fragment fade-in-then-out" data-fragment-index="4" src="beelden/26juni/5.jpg" alt="5.jpg" style="max-height:500px; max-width:100%; background:white;">
+  <video class="fragment fade-out" data-fragment-index="1" src="beelden/26juni/1.mp4#t=0.001" controls="" muted="" playsinline="" preload="metadata" style="height:560px; width:auto; max-width:100%; object-fit:contain;"></video>
+  <video class="fragment fade-in-then-out" data-fragment-index="1" src="beelden/26juni/2.mp4#t=0.001" controls="" muted="" playsinline="" preload="metadata" style="height:560px; width:auto; max-width:100%; object-fit:contain;"></video>
+  <video class="fragment fade-in-then-out" data-fragment-index="2" src="beelden/26juni/3.mp4#t=0.001" controls="" muted="" playsinline="" preload="metadata" style="height:560px; width:auto; max-width:100%; object-fit:contain;"></video>
+  <img class="fragment fade-in-then-out" data-fragment-index="3" src="beelden/26juni/4.jpg" alt="4.jpg" style="height:560px; width:auto; max-width:100%; object-fit:contain; background:white;">
+  <img class="fragment fade-in-then-out" data-fragment-index="4" src="beelden/26juni/5.jpg" alt="5.jpg" style="height:560px; width:auto; max-width:100%; object-fit:contain; background:white;">
   <div class="fragment" data-fragment-index="5"></div>
 </div>
 <p class="fragment fade-out" data-fragment-index="5" style="text-align:center; font-size:0.6em;">26 juni</p>
@@ -364,6 +364,8 @@ Albart Coster
 
   // ---- Bediening: schuifregelaars in één rij boven de grafiek ----
   const bediening = root.append("div")
+    // Reveal.js: vegen over de regelaars mag niet naar een andere dia springen
+    .attr("data-prevent-swipe", "")
     .style("display", "flex").style("flex-wrap", "wrap")
     .style("gap", "0.4em 1.5em").style("justify-content", "center").style("align-items", "center")
     .style("font-size", "0.42em").style("margin-bottom", "0.3em");
@@ -383,6 +385,17 @@ Albart Coster
       width: 16px; height: 16px; margin-top: 2px; border-radius: 50%; background: #2a78d6; border: 2px solid #fcfcfb; box-shadow: 0 0 0 1px #2a78d6; }
     #productie-d3 .dubbel input::-moz-range-thumb { pointer-events: auto; cursor: pointer;
       width: 12px; height: 12px; border-radius: 50%; background: #2a78d6; border: 2px solid #fcfcfb; box-shadow: 0 0 0 1px #2a78d6; }
+    #productie-d3 input[type=range] { touch-action: none; }
+    /* Touchscreen: Reveal schaalt de dia sterk omlaag, dus grotere knoppen en een groter raakvlak */
+    @media (pointer: coarse) {
+      #productie-d3 input[type=range] { height: 40px; }
+      #productie-d3 .dubbel { width: 220px; height: 40px; }
+      #productie-d3 .dubbel .spoor, #productie-d3 .dubbel .bereik { top: 18px; }
+      #productie-d3 .dubbel input { height: 40px; }
+      #productie-d3 .dubbel input::-webkit-slider-runnable-track { height: 40px; }
+      #productie-d3 .dubbel input::-webkit-slider-thumb { width: 32px; height: 32px; margin-top: 4px; }
+      #productie-d3 .dubbel input::-moz-range-thumb { width: 28px; height: 28px; }
+    }
   `);
 
   const maak_dubbele_regelaar = (label, min, max, opmaak) => {
@@ -675,6 +688,8 @@ Albart Coster
 
   // ---- Bediening: schuifregelaars in één rij boven de grafiek ----
   const bediening = root.append("div")
+    // Reveal.js: vegen over de regelaars mag niet naar een andere dia springen
+    .attr("data-prevent-swipe", "")
     .style("display", "flex").style("flex-wrap", "wrap")
     .style("gap", "0.4em 1.5em").style("justify-content", "center").style("align-items", "center")
     .style("font-size", "0.42em").style("margin-bottom", "0.3em");
@@ -694,6 +709,17 @@ Albart Coster
       width: 16px; height: 16px; margin-top: 2px; border-radius: 50%; background: #2a78d6; border: 2px solid #fcfcfb; box-shadow: 0 0 0 1px #2a78d6; }
     #geboorte-d3 .dubbel input::-moz-range-thumb { pointer-events: auto; cursor: pointer;
       width: 12px; height: 12px; border-radius: 50%; background: #2a78d6; border: 2px solid #fcfcfb; box-shadow: 0 0 0 1px #2a78d6; }
+    #geboorte-d3 input[type=range] { touch-action: none; }
+    /* Touchscreen: Reveal schaalt de dia sterk omlaag, dus grotere knoppen en een groter raakvlak */
+    @media (pointer: coarse) {
+      #geboorte-d3 input[type=range] { height: 40px; }
+      #geboorte-d3 .dubbel { width: 220px; height: 40px; }
+      #geboorte-d3 .dubbel .spoor, #geboorte-d3 .dubbel .bereik { top: 18px; }
+      #geboorte-d3 .dubbel input { height: 40px; }
+      #geboorte-d3 .dubbel input::-webkit-slider-runnable-track { height: 40px; }
+      #geboorte-d3 .dubbel input::-webkit-slider-thumb { width: 32px; height: 32px; margin-top: 4px; }
+      #geboorte-d3 .dubbel input::-moz-range-thumb { width: 28px; height: 28px; }
+    }
   `);
 
   const maak_dubbele_regelaar = (label, min, max, opmaak) => {
@@ -995,6 +1021,8 @@ Albart Coster
 
   // ---- Bediening: kenmerk, schuifregelaars en smoother in één rij boven de grafiek ----
   const bediening = root.append("div")
+    // Reveal.js: vegen over de regelaars mag niet naar een andere dia springen
+    .attr("data-prevent-swipe", "")
     .style("display", "flex").style("flex-wrap", "wrap")
     .style("gap", "0.4em 1.5em").style("justify-content", "center").style("align-items", "center")
     .style("font-size", "0.42em").style("margin-bottom", "0.3em");
@@ -1017,6 +1045,17 @@ Albart Coster
       width: 16px; height: 16px; margin-top: 2px; border-radius: 50%; background: #2a78d6; border: 2px solid #fcfcfb; box-shadow: 0 0 0 1px #2a78d6; }
     #mpr-d3 .dubbel input::-moz-range-thumb { pointer-events: auto; cursor: pointer;
       width: 12px; height: 12px; border-radius: 50%; background: #2a78d6; border: 2px solid #fcfcfb; box-shadow: 0 0 0 1px #2a78d6; }
+    #mpr-d3 input[type=range] { touch-action: none; }
+    /* Touchscreen: Reveal schaalt de dia sterk omlaag, dus grotere knoppen en een groter raakvlak */
+    @media (pointer: coarse) {
+      #mpr-d3 input[type=range] { height: 40px; }
+      #mpr-d3 .dubbel { width: 220px; height: 40px; }
+      #mpr-d3 .dubbel .spoor, #mpr-d3 .dubbel .bereik { top: 18px; }
+      #mpr-d3 .dubbel input { height: 40px; }
+      #mpr-d3 .dubbel input::-webkit-slider-runnable-track { height: 40px; }
+      #mpr-d3 .dubbel input::-webkit-slider-thumb { width: 32px; height: 32px; margin-top: 4px; }
+      #mpr-d3 .dubbel input::-moz-range-thumb { width: 28px; height: 28px; }
+    }
   `);
 
   const keuze = bediening.append("div").attr("class", "keuze").attr("role", "group").attr("aria-label", "Kenmerk");
